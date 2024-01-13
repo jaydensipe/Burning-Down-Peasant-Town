@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Probable Palm Tree Jam"
+config/tags=PackedStringArray("game_jam")
 run/main_scene="res://scenes/test_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
@@ -21,7 +22,7 @@ Panku="*res://addons/panku_console/console.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/panku_console/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/jaysreusablecomponentsandthings/plugin.cfg", "res://addons/panku_console/plugin.cfg")
 
 [file_customization]
 
