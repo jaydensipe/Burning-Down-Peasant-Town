@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxwrkl1tqeqvw"]
+
+[ext_resource type="Script" path="res://scenes/burnables/burnable_entity.gd" id="1_jhgtg"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/health-component.gd" id="2_p8y7o"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/burnable-component.gd" id="3_vfj18"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/burn_stats.gd" id="4_tgai6"]
+[ext_resource type="Texture2D" uid="uid://bfl75ca7hc36t" path="res://addons/kenney_prototype_textures/red/texture_01.png" id="5_5h6ng"]
+
+[sub_resource type="Resource" id="Resource_irb5t"]
+script = ExtResource("4_tgai6")
+burn_min_time = 1.0
+burn_max_time = 2.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vljoh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1a623"]
+albedo_texture = ExtResource("5_5h6ng")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ifk5a"]
+
+[node name="TestBurnable01" type="RigidBody3D" node_paths=PackedStringArray("burnable_component", "health_component")]
+script = ExtResource("1_jhgtg")
+burnable_component = NodePath("BurnableComponent")
+health_component = NodePath("HealthComponent")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2_p8y7o")
+health = 5
+
+[node name="BurnableComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("3_vfj18")
+actor = NodePath("..")
+burn_stats = SubResource("Resource_irb5t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_vljoh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_1a623")
+mesh = SubResource("BoxMesh_ifk5a")
