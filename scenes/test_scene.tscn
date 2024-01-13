@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://bx57weyvpntjq"]
-
-[node name="TestScene" type="Node3D"]
-
-[node name="Camera3D" type="Camera3D" parent="."]
