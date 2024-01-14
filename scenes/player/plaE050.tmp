@@ -25,7 +25,6 @@ script = ExtResource("1_2bcsv")
 script = ExtResource("3_5e0qq")
 character = NodePath("..")
 mouse_sensitivity = 0.1
-enable_idle = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

@@ -21,11 +21,13 @@ apply_air_acceleration = true
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_2bcsv")
 
-[node name="FPSCameraComponent3D" type="Camera3D" parent="." node_paths=PackedStringArray("character")]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("actor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.459, 0)
+current = true
+fov = 80.0
 script = ExtResource("3_5e0qq")
-character = NodePath("..")
+actor = NodePath("..")
 mouse_sensitivity = 0.1
-enable_idle = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
