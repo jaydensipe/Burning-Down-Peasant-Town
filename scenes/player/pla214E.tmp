@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cws2osv1anr8f"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_2bcsv"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/move_stats.gd" id="2_4nqdj"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/fps-camera-component-3d.gd" id="3_5e0qq"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/character-movement-3d.gd" id="3_skxvm"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uo7vp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d6wjp"]
+
+[sub_resource type="Resource" id="Resource_w6o5x"]
+script = ExtResource("2_4nqdj")
+speed = 4.0
+jump_height = 3.5
+acceleration = 20.0
+air_acceleration = 2.0
+apply_acceleration = true
+apply_air_acceleration = true
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_2bcsv")
+
+[node name="Neck" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Neck" node_paths=PackedStringArray("actor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.459, 0)
+current = true
+fov = 80.0
+script = ExtResource("3_5e0qq")
+actor = NodePath("../..")
+mouse_sensitivity = 1.0
+rotation_amount = 1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_uo7vp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_d6wjp")
+
+[node name="CharacterMovement3D" type="Node" parent="." node_paths=PackedStringArray("character")]
+script = ExtResource("3_skxvm")
+character = NodePath("..")
+move_stats = SubResource("Resource_w6o5x")

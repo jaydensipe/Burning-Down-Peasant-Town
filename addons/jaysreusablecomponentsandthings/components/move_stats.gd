@@ -8,3 +8,5 @@ class_name MoveStats
 @export_group("Advanced Config")
 @export var acceleration: float = 10.0
 @export var air_acceleration: float = 2.0
+@export var apply_acceleration: bool = false
+@export var apply_air_acceleration: bool = false
