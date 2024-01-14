@@ -69,10 +69,15 @@ shoot={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Burnables"
+
 [physics]
 
 common/physics_ticks_per_second=144
 3d/physics_engine="JoltPhysics3D"
+jolt_3d/sleep/enabled=false
 
 [rendering]
 

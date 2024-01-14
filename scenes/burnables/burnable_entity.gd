@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 class_name BurnableEntity
 
 @export var burnable_component: BurnableComponent

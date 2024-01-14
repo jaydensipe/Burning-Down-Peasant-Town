@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxbyemql1gkol"]
+
+[ext_resource type="Script" path="res://assets/weapons/weapon_hand.gd" id="1_hm3gh"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/damage-component-3d.gd" id="2_2gqea"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_p3gf3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3h6h"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uqios"]
+material = SubResource("StandardMaterial3D_h3h6h")
+
+[node name="WeaponHand" type="Node3D"]
+script = ExtResource("1_hm3gh")
+weapon_name = "Hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0.46, -0.42, -0.59)
+mesh = SubResource("CylinderMesh_p3gf3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34, 0)
+mesh = SubResource("BoxMesh_uqios")
+
+[node name="DamageComponent" type="Area3D" parent="."]
+script = ExtResource("2_2gqea")
+damage = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageComponent"]

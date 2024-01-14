@@ -8,11 +8,3 @@ func _physics_process(delta: float) -> void:
 		character_movement_3d.jump()
 		
 	character_movement_3d.apply_input_direction(Input.get_vector("move_left", "move_right", "move_forward", "move_backward"))
-	animate_()
-	
-func animate_() -> void:
-	pass
-	#if (Input.is_action_pressed("move_right")):
-		#camera_3d.velocity_roll()
-	#elif Input.is_action_pressed("move_left"):
-		#camera_3d.velocity_roll()
