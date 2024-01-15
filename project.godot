@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Panku="*res://addons/panku_console/console.tscn"
+GameManager="*res://scenes/game_manager.tscn"
 
 [editor_plugins]
 

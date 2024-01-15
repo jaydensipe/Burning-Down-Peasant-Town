@@ -28,11 +28,11 @@ size = Vector3(1, 2.00397, 0.001)
 script = ExtResource("1_2bcsv")
 
 [node name="FPSCameraComponent3D" type="Camera3D" parent="." node_paths=PackedStringArray("character", "viewmodel_container")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.708251, 4.19263)
 script = ExtResource("3_5e0qq")
 character = NodePath("..")
 viewmodel_container = NodePath("WeaponManagerComponent")
 mouse_sensitivity = 0.1
+viewmodel_origin = Vector3(0.555, -0.5, -0.72)
 bob_amount = 0.02
 roll_amount = 30.0
 

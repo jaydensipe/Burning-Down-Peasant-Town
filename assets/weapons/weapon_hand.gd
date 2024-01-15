@@ -15,11 +15,12 @@ func _physics_process(delta: float) -> void:
 	
 func shoot() -> void:
 	super()
+	
 	gpu_particles_3d.emitting = true
-	spawner_component.spawn_at_location(ray_cast_3d.get_collision_point())
 	
-	if !(damage_component.has_overlapping_bodies()): return
-	
+	if (ray_cast_3d.is_colliding()):
+		spawner_component.spawn_at_location(ray_cast_3d.get_collision_point())
+		
 	var collision = damage_component.get_overlapping_bodies()
 	if (len(collision) <= 0): return
 	

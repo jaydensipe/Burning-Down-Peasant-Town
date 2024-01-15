@@ -78,7 +78,7 @@ weapon_name = "Hand"
 root_node = NodePath("../GPUParticles3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0.457269, -0.403955, -0.581451)
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, 0, 0)
 mesh = SubResource("CylinderMesh_p3gf3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
@@ -90,11 +90,11 @@ script = ExtResource("2_2gqea")
 damage = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DamageComponent"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.460326, -0.412759, -2.53044)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.06249)
 shape = SubResource("CapsuleShape3D_63m4g")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.471974, -0.369266, -1.24153)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.510805)
 material_override = SubResource("StandardMaterial3D_o5ghe")
 emitting = false
 amount = 64
@@ -106,12 +106,13 @@ draw_pass_1 = SubResource("QuadMesh_8jter")
 [node name="SpawnerComponent" type="Node3D" parent="."]
 script = ExtResource("5_uos8t")
 scene = ExtResource("5_x4i4y")
-delete_timer = true
-delete_time = 5.0
 spawn_delay_timer = true
 spawn_delay_time = 0.1
+delete_timer = true
+delete_time = 10.0
+randomize_y = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.465725, -0.412992, -1.07481)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.531762)
 target_position = Vector3(0, 3, 0)
 debug_shape_thickness = 5

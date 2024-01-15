@@ -6,7 +6,7 @@ class_name DamageComponent
 func _ready() -> void:
 	area_entered.connect(_process_damage)
 
-func _process_damage(hitbox: HitboxComponent3D):
-	if !(hitbox is HitboxComponent3D): return
+func _process_damage(area: Area3D):
+	if !(area is HitboxComponent3D): return
 	
-	hitbox.hit.emit(self)
+	area.hit.emit(self)

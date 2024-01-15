@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://bggpm5uoachor"]
+
+[ext_resource type="Script" path="res://scenes/entities/peasant.gd" id="1_ige6f"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/health-component.gd" id="1_u1557"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/character-movement-3d.gd" id="2_c1hh4"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/move_stats.gd" id="3_32lm6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b0kli"]
+
+[sub_resource type="Resource" id="Resource_di7d1"]
+script = ExtResource("3_32lm6")
+speed = 40.0
+jump_height = 5.0
+acceleration = 10.0
+air_acceleration = 2.0
+apply_acceleration = true
+apply_air_acceleration = false
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ibi2r"]
+
+[node name="Peasant" type="CharacterBody3D"]
+script = ExtResource("1_ige6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_b0kli")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("1_u1557")
+health = 100
+
+[node name="CharacterMovement3D" type="Node" parent="." node_paths=PackedStringArray("character")]
+script = ExtResource("2_c1hh4")
+character = NodePath("..")
+move_stats = SubResource("Resource_di7d1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ibi2r")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

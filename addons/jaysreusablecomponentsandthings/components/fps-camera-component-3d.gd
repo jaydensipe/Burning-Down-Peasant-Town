@@ -1,10 +1,12 @@
 extends Camera3D
 class_name FPSCameraComponent3D
 
-@export_group("FPS Settings")
 @export var character: CharacterBody3D
 @export var viewmodel_container: Node3D
+
+@export_group("View Config")
 @export var mouse_sensitivity: float = 0.005
+@export var viewmodel_origin = Vector3(0.0, 0.0, 0.0)
 
 # Camera controller settings and code used from: https://github.com/Btan2/Q_Move/. Thank you!
 enum BOB_TYPE { VB_COS, VB_SIN, VB_COS2, VB_SIN2 }
@@ -37,7 +39,6 @@ var idleRight : float = 0.0
 var idleForward : float = 0.0
 var idleUp : float =  0.0
 
-var viewmodel_origin = Vector3(0.5, -0.4, -0.75)
 var swayPos : Vector3 = Vector3.ZERO
 var swayRot : Vector3 = Vector3.ZERO
 var swayPos_offset : float = 0.12     # default: 0.12
