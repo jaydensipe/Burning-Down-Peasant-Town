@@ -21,6 +21,8 @@ config/icon="res://icon.svg"
 
 Panku="*res://addons/panku_console/console.tscn"
 GameManager="*res://scenes/game_manager.tscn"
+GlobalEventBus="*res://scripts/global_event_bus.gd"
+GlobalGameInformation="*res://scripts/global_game_information.gd"
 
 [editor_plugins]
 
@@ -32,7 +34,7 @@ folder_colors={
 "res://addons/": "gray",
 "res://assets/": "yellow",
 "res://scenes/": "red",
-"res://shaders/": "pink",
+"res://scripts/": "pink",
 "res://sounds/": "purple",
 "res://ui/": "green"
 }
