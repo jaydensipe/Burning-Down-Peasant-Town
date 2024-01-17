@@ -15,12 +15,12 @@ config/description="Made for 2024 Pirate Dev Game Jam! :)"
 config/tags=PackedStringArray("game_jam")
 run/main_scene="res://scenes/main_game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+run/max_fps=200
 config/icon="res://icon.svg"
 
 [autoload]
 
 Panku="*res://addons/panku_console/console.tscn"
-GameManager="*res://scenes/game_manager.tscn"
 GlobalEventBus="*res://scripts/global_event_bus.gd"
 GlobalGameInformation="*res://scripts/global_game_information.gd"
 
@@ -71,6 +71,11 @@ shoot={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+alternate_fire={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [layer_names]
 
@@ -80,7 +85,8 @@ shoot={
 
 common/physics_ticks_per_second=144
 3d/physics_engine="JoltPhysics3D"
-jolt_3d/sleep/enabled=false
+jolt_3d/collisions/use_shape_margins=false
+jolt_3d/collisions/areas_detect_static_bodies=true
 
 [rendering]
 

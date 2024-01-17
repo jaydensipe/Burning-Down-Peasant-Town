@@ -1,12 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://jtjq0bv3fa0d"]
+[gd_scene load_steps=13 format=3 uid="uid://jtjq0bv3fa0d"]
 
-[ext_resource type="Texture2D" uid="uid://bx6jbgqjjiedn" path="res://assets/models/textures/house1_material_basecolor.png" id="1_pydff"]
+[ext_resource type="Texture2D" uid="uid://bx6jbgqjjiedn" path="res://assets/props/house/textures/house1_material_basecolor.png" id="1_pydff"]
 [ext_resource type="Script" path="res://scenes/burnables/burnable_entity.gd" id="1_ssxi1"]
-[ext_resource type="Texture2D" uid="uid://cxe1ow5k5cwfg" path="res://assets/models/textures/house1_material_ao.png" id="2_rhmnw"]
-[ext_resource type="Texture2D" uid="uid://cnoi8aggccgcn" path="res://assets/models/textures/house1_material_normal.png" id="3_df83s"]
-[ext_resource type="Texture2D" uid="uid://bndbamckeuels" path="res://assets/models/textures/house1_material_roughness.png" id="4_w35ru"]
+[ext_resource type="Texture2D" uid="uid://cxe1ow5k5cwfg" path="res://assets/props/house/textures/house1_material_ao.png" id="2_rhmnw"]
+[ext_resource type="Texture2D" uid="uid://cnoi8aggccgcn" path="res://assets/props/house/textures/house1_material_normal.png" id="3_df83s"]
+[ext_resource type="Texture2D" uid="uid://bndbamckeuels" path="res://assets/props/house/textures/house1_material_roughness.png" id="4_w35ru"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/burnable-component.gd" id="6_uonnx"]
-[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/burn_stats.gd" id="7_wfq2y"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/health-component.gd" id="8_2ysiu"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xpugi"]
@@ -60,16 +59,29 @@ normal_texture = ExtResource("3_df83s")
 ao_enabled = true
 ao_texture = ExtResource("2_rhmnw")
 
-[sub_resource type="Resource" id="Resource_pydok"]
-script = ExtResource("7_wfq2y")
-burn_min_time = 1.0
-burn_max_time = 2.0
-
-[node name="BurnableHouse" type="RigidBody3D" node_paths=PackedStringArray("burnable_component", "health_component", "burn_timer")]
+[node name="BurnableHouse" type="StaticBody3D" node_paths=PackedStringArray("health_component", "burnable_component") groups=["burnable"]]
 script = ExtResource("1_ssxi1")
-burnable_component = NodePath("BurnableComponent")
 health_component = NodePath("HealthComponent")
-burn_timer = NodePath("Timer")
+burnable_component = NodePath("BurnableComponent")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("8_2ysiu")
+max_health = 200.0
+_health = 200.0
+
+[node name="BurnableComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "burn_timer")]
+script = ExtResource("6_uonnx")
+actor = NodePath("..")
+burn_timer = NodePath("../Timer")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+billboard = 2
+text = "TIME LEFT"
+font_size = 96
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_xpugi")
@@ -78,15 +90,3 @@ shape = SubResource("ConvexPolygonShape3D_xpugi")
 mesh = SubResource("ArrayMesh_pn4kw")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qs0qs")
-
-[node name="BurnableComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("6_uonnx")
-actor = NodePath("..")
-burn_stats = SubResource("Resource_pydok")
-
-[node name="HealthComponent" type="Node" parent="."]
-script = ExtResource("8_2ysiu")
-health = 200
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 15.0

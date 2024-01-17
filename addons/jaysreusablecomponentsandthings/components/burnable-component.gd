@@ -1,12 +1,20 @@
 extends Node
 class_name BurnableComponent
 
-@export var actor: Node
-@export var burn_stats: BurnStats
+var burning: bool = false:
+	set(value):
+		burning = value
+		
+		if (value):
+			burn_timer.start()
+		else:
+			burn_timer.stop()
 
-func start_burn() -> void:
-	#TODO: Add burning shader
-	get_tree().create_timer(randf_range(burn_stats.burn_min_time, burn_stats.burn_max_time)).timeout.connect(_burn)
-	
+@export var actor: Node
+@export var burn_timer: Timer
+
+func _ready() -> void:
+	burn_timer.timeout.connect(func(): _burn())
+
 func _burn() -> void:
 	actor.queue_free()

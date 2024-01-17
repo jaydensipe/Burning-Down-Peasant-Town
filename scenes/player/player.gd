@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 @onready var character_movement_3d: CharacterMovement3D = $CharacterMovement3D
 @onready var fps_camera_component_3d: FPSCameraComponent3D = $FPSCameraComponent3D

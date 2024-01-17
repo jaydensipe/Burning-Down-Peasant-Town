@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2t5opg8aa3f8"]
 
-[ext_resource type="Texture2D" uid="uid://c5tovnu4wuuxa" path="res://assets/test_grass.jpg" id="1_gkdtp"]
+[ext_resource type="Texture2D" uid="uid://c5tovnu4wuuxa" path="res://assets/textures/test_grass.jpg" id="1_gkdtp"]
 [ext_resource type="Texture2D" uid="uid://b65lhn0crvmtg" path="res://addons/kenney_prototype_textures/light/texture_08.png" id="2_wic0e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ohij"]

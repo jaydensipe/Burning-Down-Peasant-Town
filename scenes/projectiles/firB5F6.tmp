@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1v3hmm504ie7"]
+
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/projectile_3d.gd" id="1_8ce28"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_aw27b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nrrqh"]
+
+[node name="FireProjectile" type="Area3D"]
+script = ExtResource("1_8ce28")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, -0.1, 4.37114e-09, 0, -4.37114e-09, -0.1, 0.1, -4.37114e-09, 1.91069e-16, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_aw27b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-09, -0.1, 4.37114e-09, 0, -4.37114e-09, -0.1, 0.1, -4.37114e-09, 1.91069e-16, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_nrrqh")

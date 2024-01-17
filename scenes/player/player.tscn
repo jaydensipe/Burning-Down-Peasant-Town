@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/move_stats.gd" id="2_4nqdj"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/fps-camera-component-3d.gd" id="3_5e0qq"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/character-movement-3d.gd" id="3_skxvm"]
-[ext_resource type="PackedScene" uid="uid://dxbyemql1gkol" path="res://assets/weapons/weapon_hand.tscn" id="4_rqlk5"]
+[ext_resource type="PackedScene" uid="uid://dxbyemql1gkol" path="res://scenes/weapons/weapon_hand.tscn" id="4_rqlk5"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/weapon-manager-component.gd" id="5_3aw06"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/damage-component-3d.gd" id="7_s2h8t"]
 
@@ -24,7 +24,7 @@ apply_air_acceleration = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_v6r6t"]
 size = Vector3(1, 2.00397, 0.001)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_2bcsv")
 
 [node name="FPSCameraComponent3D" type="Camera3D" parent="." node_paths=PackedStringArray("character", "viewmodel_container")]
@@ -32,7 +32,7 @@ script = ExtResource("3_5e0qq")
 character = NodePath("..")
 viewmodel_container = NodePath("WeaponManagerComponent")
 mouse_sensitivity = 0.1
-viewmodel_origin = Vector3(0.555, -0.5, -0.72)
+viewmodel_origin = Vector3(0.15, -0.295, -0.195)
 bob_amount = 0.02
 roll_amount = 30.0
 

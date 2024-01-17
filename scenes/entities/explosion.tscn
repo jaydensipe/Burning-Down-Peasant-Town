@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctpif1hi2skhi"]
+
+[ext_resource type="Script" path="res://scenes/entities/explosion.gd" id="1_w8ymn"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bbbbm"]
+radial_velocity_max = 10.0
+gravity = Vector3(0, 9.8, 0)
+scale_min = 0.5
+scale_max = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxw6j"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ciyml"]
+material = SubResource("StandardMaterial3D_kxw6j")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a5uk8"]
+radius = 2.5
+
+[node name="Explosion" type="Area3D"]
+script = ExtResource("1_w8ymn")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 32
+lifetime = 0.25
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_bbbbm")
+draw_pass_1 = SubResource("SphereMesh_ciyml")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_a5uk8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
