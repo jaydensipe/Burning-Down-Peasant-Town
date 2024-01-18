@@ -25,6 +25,7 @@ apply_air_acceleration = true
 size = Vector3(1, 2.00397, 0.001)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_mask = 3
 script = ExtResource("1_2bcsv")
 
 [node name="FPSCameraComponent3D" type="Camera3D" parent="." node_paths=PackedStringArray("character", "viewmodel_container")]

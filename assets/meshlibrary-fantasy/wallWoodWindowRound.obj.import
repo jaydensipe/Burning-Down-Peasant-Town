@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ywogr6p57kg0"
+path="res://.godot/imported/wallWoodWindowRound.obj-9276eb653072cc5fd4f71ea11fd2122f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodWindowRound.obj-9276eb653072cc5fd4f71ea11fd2122f.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/wallWoodWindowRound.obj"
+dest_files=["res://.godot/imported/wallWoodWindowRound.obj-9276eb653072cc5fd4f71ea11fd2122f.mesh", "res://.godot/imported/wallWoodWindowRound.obj-9276eb653072cc5fd4f71ea11fd2122f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

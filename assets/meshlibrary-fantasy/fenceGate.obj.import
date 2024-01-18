@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqumoxw7bp825"
+path="res://.godot/imported/fenceGate.obj-8f98f807d16d0131a67eb10b26ec1cd3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fenceGate.obj-8f98f807d16d0131a67eb10b26ec1cd3.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/fenceGate.obj"
+dest_files=["res://.godot/imported/fenceGate.obj-8f98f807d16d0131a67eb10b26ec1cd3.mesh", "res://.godot/imported/fenceGate.obj-8f98f807d16d0131a67eb10b26ec1cd3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

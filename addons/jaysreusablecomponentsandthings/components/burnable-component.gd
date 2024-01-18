@@ -13,8 +13,12 @@ var burning: bool = false:
 @export var actor: Node
 @export var burn_timer: Timer
 
+signal finished_burn()
+
 func _ready() -> void:
 	burn_timer.timeout.connect(func(): _burn())
 
 func _burn() -> void:
+	finished_burn.emit()
+	
 	actor.queue_free()

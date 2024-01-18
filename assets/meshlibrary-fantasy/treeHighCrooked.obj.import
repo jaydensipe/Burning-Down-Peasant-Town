@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dud36sf4lvieq"
+path="res://.godot/imported/treeHighCrooked.obj-afb9591ce5cb00a1cb5db1db77b85bfb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/treeHighCrooked.obj-afb9591ce5cb00a1cb5db1db77b85bfb.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/treeHighCrooked.obj"
+dest_files=["res://.godot/imported/treeHighCrooked.obj-afb9591ce5cb00a1cb5db1db77b85bfb.mesh", "res://.godot/imported/treeHighCrooked.obj-afb9591ce5cb00a1cb5db1db77b85bfb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

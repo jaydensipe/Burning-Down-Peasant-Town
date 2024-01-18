@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://q61o8hhi0fvp"
+path="res://.godot/imported/wallNarrowStairs.obj-e67cd8f581272fa57ddd5e0d1275072d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallNarrowStairs.obj-e67cd8f581272fa57ddd5e0d1275072d.mesh"]
+
+source_file="res://assets/meshlibrary/wallNarrowStairs.obj"
+dest_files=["res://.godot/imported/wallNarrowStairs.obj-e67cd8f581272fa57ddd5e0d1275072d.mesh", "res://.godot/imported/wallNarrowStairs.obj-e67cd8f581272fa57ddd5e0d1275072d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

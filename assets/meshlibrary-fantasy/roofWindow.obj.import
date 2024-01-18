@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cd3jtg6ev0oyd"
+path="res://.godot/imported/roofWindow.obj-f030303f70826f7cbc7cc6a9fd0d304b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roofWindow.obj-f030303f70826f7cbc7cc6a9fd0d304b.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/roofWindow.obj"
+dest_files=["res://.godot/imported/roofWindow.obj-f030303f70826f7cbc7cc6a9fd0d304b.mesh", "res://.godot/imported/roofWindow.obj-f030303f70826f7cbc7cc6a9fd0d304b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

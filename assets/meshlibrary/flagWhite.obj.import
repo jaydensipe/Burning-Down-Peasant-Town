@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://pmnacyvw8eom"
+path="res://.godot/imported/flagWhite.obj-f7e545bda3a04c79488f774053283aad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/flagWhite.obj-f7e545bda3a04c79488f774053283aad.mesh"]
+
+source_file="res://assets/meshlibrary/flagWhite.obj"
+dest_files=["res://.godot/imported/flagWhite.obj-f7e545bda3a04c79488f774053283aad.mesh", "res://.godot/imported/flagWhite.obj-f7e545bda3a04c79488f774053283aad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

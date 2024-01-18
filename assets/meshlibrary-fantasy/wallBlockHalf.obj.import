@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rk4mft5huand"
+path="res://.godot/imported/wallBlockHalf.obj-529a3c5ace8c220a50fc09ec9fe835f2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallBlockHalf.obj-529a3c5ace8c220a50fc09ec9fe835f2.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/wallBlockHalf.obj"
+dest_files=["res://.godot/imported/wallBlockHalf.obj-529a3c5ace8c220a50fc09ec9fe835f2.mesh", "res://.godot/imported/wallBlockHalf.obj-529a3c5ace8c220a50fc09ec9fe835f2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

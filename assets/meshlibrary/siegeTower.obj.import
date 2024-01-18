@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b2dxiggdg4m4w"
+path="res://.godot/imported/siegeTower.obj-145a5fe07b1fc25e1bf3f7be8ff6811b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/siegeTower.obj-145a5fe07b1fc25e1bf3f7be8ff6811b.mesh"]
+
+source_file="res://assets/meshlibrary/siegeTower.obj"
+dest_files=["res://.godot/imported/siegeTower.obj-145a5fe07b1fc25e1bf3f7be8ff6811b.mesh", "res://.godot/imported/siegeTower.obj-145a5fe07b1fc25e1bf3f7be8ff6811b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -15,6 +15,9 @@ func _ready() -> void:
 		add_to_group("burning")
 	)
 	
+	burnable_component.finished_burn.connect(func():
+		print("burned down"))
+	
 	health_component.healed_to_full.connect(func():
 		burnable_component.burning = false
 		remove_from_group("burning")

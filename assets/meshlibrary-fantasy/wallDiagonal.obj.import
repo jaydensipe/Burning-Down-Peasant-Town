@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://pd3y1acm373k"
+path="res://.godot/imported/wallDiagonal.obj-4f718cc563ac159dda31cd33a8e78bba.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallDiagonal.obj-4f718cc563ac159dda31cd33a8e78bba.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/wallDiagonal.obj"
+dest_files=["res://.godot/imported/wallDiagonal.obj-4f718cc563ac159dda31cd33a8e78bba.mesh", "res://.godot/imported/wallDiagonal.obj-4f718cc563ac159dda31cd33a8e78bba.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

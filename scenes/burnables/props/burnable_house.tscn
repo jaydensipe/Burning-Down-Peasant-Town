@@ -75,7 +75,6 @@ actor = NodePath("..")
 burn_timer = NodePath("../Timer")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dalktsii2d44l"
+path="res://.godot/imported/siegeRam.obj-7c70b878d1e8605555a6764a83b2f4ce.mesh"
+
+[deps]
+
+files=["res://.godot/imported/siegeRam.obj-7c70b878d1e8605555a6764a83b2f4ce.mesh"]
+
+source_file="res://assets/meshlibrary/siegeRam.obj"
+dest_files=["res://.godot/imported/siegeRam.obj-7c70b878d1e8605555a6764a83b2f4ce.mesh", "res://.godot/imported/siegeRam.obj-7c70b878d1e8605555a6764a83b2f4ce.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

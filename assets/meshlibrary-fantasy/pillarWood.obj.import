@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cs86yd3jmp2g0"
+path="res://.godot/imported/pillarWood.obj-7f09c7938c051d2118c07e969ac881e5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pillarWood.obj-7f09c7938c051d2118c07e969ac881e5.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/pillarWood.obj"
+dest_files=["res://.godot/imported/pillarWood.obj-7f09c7938c051d2118c07e969ac881e5.mesh", "res://.godot/imported/pillarWood.obj-7f09c7938c051d2118c07e969ac881e5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

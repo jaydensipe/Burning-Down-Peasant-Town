@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csptr5b435mpj"
+path="res://.godot/imported/wallStud.obj-9f635cfc61fcb2e44b0ad5dcb0356d1e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallStud.obj-9f635cfc61fcb2e44b0ad5dcb0356d1e.mesh"]
+
+source_file="res://assets/meshlibrary/wallStud.obj"
+dest_files=["res://.godot/imported/wallStud.obj-9f635cfc61fcb2e44b0ad5dcb0356d1e.mesh", "res://.godot/imported/wallStud.obj-9f635cfc61fcb2e44b0ad5dcb0356d1e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

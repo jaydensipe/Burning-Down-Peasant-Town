@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvp630poii8gt"
+path="res://.godot/imported/towerSquareBase.obj-bdcd8226892b477f5c330e689bd38942.mesh"
+
+[deps]
+
+files=["res://.godot/imported/towerSquareBase.obj-bdcd8226892b477f5c330e689bd38942.mesh"]
+
+source_file="res://assets/meshlibrary/towerSquareBase.obj"
+dest_files=["res://.godot/imported/towerSquareBase.obj-bdcd8226892b477f5c330e689bd38942.mesh", "res://.godot/imported/towerSquareBase.obj-bdcd8226892b477f5c330e689bd38942.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
