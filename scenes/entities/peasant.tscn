@@ -22,6 +22,7 @@ apply_air_acceleration = false
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8hu6u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgos2"]
+resource_local_to_scene = true
 albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d0bn1"]
@@ -31,7 +32,6 @@ script = ExtResource("1_ige6f")
 
 [node name="StateChart" type="Node" parent="."]
 script = ExtResource("2_tumaw")
-track_in_editor = true
 
 [node name="Root" type="Node" parent="StateChart"]
 script = ExtResource("3_1e2qe")
@@ -71,10 +71,13 @@ script = ExtResource("1_u1557")
 max_health = 100.0
 _health = 100.0
 
-[node name="BurnableComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "burn_timer")]
+[node name="BurnableComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "burn_timer", "mesh")]
 script = ExtResource("9_cvxra")
 actor = NodePath("..")
 burn_timer = NodePath("Timer")
+use_3d_burn_effects = true
+mesh = NodePath("../MeshInstance3D")
+burn_hue = Color(0.223529, 0.223529, 0.223529, 1)
 
 [node name="Timer" type="Timer" parent="BurnableComponent"]
 
