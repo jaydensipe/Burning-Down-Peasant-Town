@@ -6,3 +6,4 @@
 size = Vector3(3, 3, 3)
 texture_albedo = ExtResource("1_fdk4y")
 modulate = Color(0, 0, 0, 1)
+cull_mask = 1048571

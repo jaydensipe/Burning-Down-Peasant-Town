@@ -23,7 +23,7 @@ func shoot() -> void:
 	
 func alternate_fire() -> void:
 	super()
-	state_chart.send_event("idle_to_alternate")	
+	state_chart.send_event("idle_to_alternate")
 
 func _on_idle_state_entered() -> void:
 	gpu_particles_3d.emitting = false

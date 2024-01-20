@@ -1,11 +1,7 @@
-extends CharacterBody3D
+extends Enemy
 class_name Peasant
 
-@onready var character_movement_3d: CharacterMovement3D = $CharacterMovement3D
-@onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var state_chart: StateChart = $StateChart
-@onready var health_component: HealthComponent = $HealthComponent
-@onready var burnable_component: BurnableComponent = $BurnableComponent
 
 var _current_burning_prop: BurnableProp = null
 
@@ -58,13 +54,13 @@ func _on_pursuing_state_physics_processing(delta: float) -> void:
 	if (_current_burning_prop.being_serviced):
 		state_chart.send_event("pursue_to_look")
 	
-	character_movement_3d.move_to_direction(navigation_agent_3d.get_next_path_position() - global_position, delta)
+	if (character_movement_3d.character.is_on_floor()):
+		character_movement_3d.move_to_direction(navigation_agent_3d.get_next_path_position() - global_position, delta)
 
 
 func _on_navigation_agent_3d_target_reached() -> void:
-	pass
-	#state_chart.send_event("pursue_to_watering")
-	#_current_burning_prop.being_serviced = true
+	state_chart.send_event("pursue_to_watering")
+	_current_burning_prop.being_serviced = true
 	
 func _on_watering_state_physics_processing(delta: float) -> void:
 	if !(is_instance_valid(_current_burning_prop) or _current_burning_prop.burnable_component.burning): state_chart.send_event("watering_to_looking")

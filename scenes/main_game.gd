@@ -1,7 +1,6 @@
 extends Node
 
 @onready var level_manager: LevelManager = $LevelManager
-
 func _ready():
 	GlobalEventBus.objective_burned_down.connect(func(objective: BurnableProp):
 		GlobalGameInformation.burnable_objectives.erase(objective)

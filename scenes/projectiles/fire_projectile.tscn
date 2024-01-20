@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1v3hmm504ie7"]
+[gd_scene load_steps=8 format=3 uid="uid://b1v3hmm504ie7"]
 
 [ext_resource type="Script" path="res://scenes/projectiles/fire_projectile.gd" id="1_gfcdx"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/projectile-component-3d.gd" id="1_tavj7"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/spawner-component-3d.gd" id="3_pf22g"]
 [ext_resource type="PackedScene" uid="uid://ctpif1hi2skhi" path="res://scenes/entities/explosion.tscn" id="4_biflb"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2sr1"]
+albedo_color = Color(1, 0.603922, 0, 1)
+
 [sub_resource type="SphereMesh" id="SphereMesh_vsf50"]
+material = SubResource("StandardMaterial3D_p2sr1")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_b1xff"]
 
@@ -23,7 +27,7 @@ shape = SubResource("SphereShape3D_b1xff")
 [node name="ProjectileComponent3D" type="Node3D" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("1_tavj7")
 actor = NodePath("..")
-speed = 10.0
+speed = 20.0
 
 [node name="SpawnerComponent" type="Node3D" parent="."]
 script = ExtResource("3_pf22g")

@@ -24,7 +24,7 @@ apply_air_acceleration = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_v6r6t"]
 size = Vector3(1, 2.00397, 0.001)
 
-[node name="Player" type="CharacterBody3D" groups=["player"]]
+[node name="Player" type="CharacterBody3D"]
 collision_mask = 3
 script = ExtResource("1_2bcsv")
 

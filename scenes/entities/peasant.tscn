@@ -12,7 +12,7 @@
 
 [sub_resource type="Resource" id="Resource_di7d1"]
 script = ExtResource("3_32lm6")
-speed = 80.0
+speed = 50.0
 jump_height = 5.0
 acceleration = 10.0
 air_acceleration = 2.0
@@ -68,8 +68,8 @@ event = &"watering_to_looking"
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("1_u1557")
-max_health = 100.0
-_health = 100.0
+max_health = 150.0
+_health = 150.0
 
 [node name="BurnableComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "burn_timer", "mesh")]
 script = ExtResource("9_cvxra")
@@ -96,7 +96,6 @@ shape = SubResource("CapsuleShape3D_d0bn1")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 target_desired_distance = 3.0
 avoidance_enabled = true
-debug_enabled = true
 
 [connection signal="state_entered" from="StateChart/Root/Looking" to="." method="_on_looking_state_entered"]
 [connection signal="state_physics_processing" from="StateChart/Root/Looking" to="." method="_on_looking_state_physics_processing"]
