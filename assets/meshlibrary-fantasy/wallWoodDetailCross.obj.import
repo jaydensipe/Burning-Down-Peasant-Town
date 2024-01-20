@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcanfed3150es"
+path="res://.godot/imported/wallWoodDetailCross.obj-407d7d86e5353b2f2cae36e73b640db5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodDetailCross.obj-407d7d86e5353b2f2cae36e73b640db5.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/wallWoodDetailCross.obj"
+dest_files=["res://.godot/imported/wallWoodDetailCross.obj-407d7d86e5353b2f2cae36e73b640db5.mesh", "res://.godot/imported/wallWoodDetailCross.obj-407d7d86e5353b2f2cae36e73b640db5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

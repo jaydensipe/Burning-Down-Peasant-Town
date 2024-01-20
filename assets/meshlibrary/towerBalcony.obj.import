@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b320a5io0xt0d"
+path="res://.godot/imported/towerBalcony.obj-2a01a4963bcd6f3c8f7ff9445ce4c69c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/towerBalcony.obj-2a01a4963bcd6f3c8f7ff9445ce4c69c.mesh"]
+
+source_file="res://assets/meshlibrary/towerBalcony.obj"
+dest_files=["res://.godot/imported/towerBalcony.obj-2a01a4963bcd6f3c8f7ff9445ce4c69c.mesh", "res://.godot/imported/towerBalcony.obj-2a01a4963bcd6f3c8f7ff9445ce4c69c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

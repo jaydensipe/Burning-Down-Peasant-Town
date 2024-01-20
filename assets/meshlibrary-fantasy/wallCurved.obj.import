@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ce8s2wo4monvx"
+path="res://.godot/imported/wallCurved.obj-02225a9818e8f625c6ca70448e333454.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallCurved.obj-02225a9818e8f625c6ca70448e333454.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/wallCurved.obj"
+dest_files=["res://.godot/imported/wallCurved.obj-02225a9818e8f625c6ca70448e333454.mesh", "res://.godot/imported/wallCurved.obj-02225a9818e8f625c6ca70448e333454.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

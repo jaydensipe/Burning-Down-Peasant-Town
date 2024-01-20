@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bor40qrd6fci7"
+path="res://.godot/imported/stairsStoneCorner.obj-f618d26ddde2fce63224596671f3a45c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairsStoneCorner.obj-f618d26ddde2fce63224596671f3a45c.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/stairsStoneCorner.obj"
+dest_files=["res://.godot/imported/stairsStoneCorner.obj-f618d26ddde2fce63224596671f3a45c.mesh", "res://.godot/imported/stairsStoneCorner.obj-f618d26ddde2fce63224596671f3a45c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

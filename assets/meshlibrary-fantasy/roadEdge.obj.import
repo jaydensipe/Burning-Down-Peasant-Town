@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://duy1tinuushfl"
+path="res://.godot/imported/roadEdge.obj-6eacfa0a6af1fd3b09e2e774d918f5b1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadEdge.obj-6eacfa0a6af1fd3b09e2e774d918f5b1.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/roadEdge.obj"
+dest_files=["res://.godot/imported/roadEdge.obj-6eacfa0a6af1fd3b09e2e774d918f5b1.mesh", "res://.godot/imported/roadEdge.obj-6eacfa0a6af1fd3b09e2e774d918f5b1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

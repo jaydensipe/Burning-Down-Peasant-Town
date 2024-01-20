@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://o2ul5wi4e16k"
+path="res://.godot/imported/hedgeGate.obj-c297f975c08cfc2b28ceb9b8c4fb2a0c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hedgeGate.obj-c297f975c08cfc2b28ceb9b8c4fb2a0c.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/hedgeGate.obj"
+dest_files=["res://.godot/imported/hedgeGate.obj-c297f975c08cfc2b28ceb9b8c4fb2a0c.mesh", "res://.godot/imported/hedgeGate.obj-c297f975c08cfc2b28ceb9b8c4fb2a0c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

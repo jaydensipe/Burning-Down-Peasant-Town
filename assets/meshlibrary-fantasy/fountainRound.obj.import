@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cbq4kaxeqknoj"
+path="res://.godot/imported/fountainRound.obj-5888e246e61b40600109078abf0a3ca3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fountainRound.obj-5888e246e61b40600109078abf0a3ca3.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/fountainRound.obj"
+dest_files=["res://.godot/imported/fountainRound.obj-5888e246e61b40600109078abf0a3ca3.mesh", "res://.godot/imported/fountainRound.obj-5888e246e61b40600109078abf0a3ca3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

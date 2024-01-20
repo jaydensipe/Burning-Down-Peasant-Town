@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://lnwdk18ca2v4"
+path="res://.godot/imported/wallNarrowWood.obj-0cc9dbae3f8653d065c220edc4f0e965.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallNarrowWood.obj-0cc9dbae3f8653d065c220edc4f0e965.mesh"]
+
+source_file="res://assets/meshlibrary/wallNarrowWood.obj"
+dest_files=["res://.godot/imported/wallNarrowWood.obj-0cc9dbae3f8653d065c220edc4f0e965.mesh", "res://.godot/imported/wallNarrowWood.obj-0cc9dbae3f8653d065c220edc4f0e965.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

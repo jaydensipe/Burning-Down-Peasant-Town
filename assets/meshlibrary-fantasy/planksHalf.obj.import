@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bghh7wk0mq0u"
+path="res://.godot/imported/planksHalf.obj-31c4351bdf2b2d75d2e0e2a0002a5ce2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/planksHalf.obj-31c4351bdf2b2d75d2e0e2a0002a5ce2.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/planksHalf.obj"
+dest_files=["res://.godot/imported/planksHalf.obj-31c4351bdf2b2d75d2e0e2a0002a5ce2.mesh", "res://.godot/imported/planksHalf.obj-31c4351bdf2b2d75d2e0e2a0002a5ce2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

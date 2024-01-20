@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crjkk3y7c7tc7"
+path="res://.godot/imported/wallDoorwaySquareWideCurved.obj-943ab3a4af89a3e9713560e59858ae98.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallDoorwaySquareWideCurved.obj-943ab3a4af89a3e9713560e59858ae98.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/wallDoorwaySquareWideCurved.obj"
+dest_files=["res://.godot/imported/wallDoorwaySquareWideCurved.obj-943ab3a4af89a3e9713560e59858ae98.mesh", "res://.godot/imported/wallDoorwaySquareWideCurved.obj-943ab3a4af89a3e9713560e59858ae98.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

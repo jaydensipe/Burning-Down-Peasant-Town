@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chyofx1ovkxr6"
+path="res://.godot/imported/towerSquareMidOpenHalf.obj-a926ce6b4b12ac22322082c0b9ab5b8e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/towerSquareMidOpenHalf.obj-a926ce6b4b12ac22322082c0b9ab5b8e.mesh"]
+
+source_file="res://assets/meshlibrary/towerSquareMidOpenHalf.obj"
+dest_files=["res://.godot/imported/towerSquareMidOpenHalf.obj-a926ce6b4b12ac22322082c0b9ab5b8e.mesh", "res://.godot/imported/towerSquareMidOpenHalf.obj-a926ce6b4b12ac22322082c0b9ab5b8e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

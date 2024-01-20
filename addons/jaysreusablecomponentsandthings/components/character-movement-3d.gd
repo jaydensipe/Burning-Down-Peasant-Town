@@ -31,9 +31,17 @@ func _physics_process(delta: float) -> void:
 		
 	character.move_and_slide()
 	
+
+		
+func apply_player_input_direction(input_direction: Vector2):
+	_input_dir = input_direction
+	
 func jump():
 	if character.is_on_floor():
 		character.velocity.y = move_stats.jump_height
-		
-func apply_input_direction(input_direction: Vector2):
-	_input_dir = input_direction
+	
+func move_to_direction(direction: Vector3, delta: float):
+	direction = direction.normalized()
+	
+	character.velocity = character.velocity.lerp(direction * move_stats.speed, move_stats.acceleration * delta)
+	character.move_and_slide()

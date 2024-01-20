@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dx1bqk0k4j4xl"
+path="res://.godot/imported/stairsWideWood.obj-776afc67914f44ad05efa7277ccb095d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairsWideWood.obj-776afc67914f44ad05efa7277ccb095d.mesh"]
+
+source_file="res://assets/meshlibrary-fantasy/stairsWideWood.obj"
+dest_files=["res://.godot/imported/stairsWideWood.obj-776afc67914f44ad05efa7277ccb095d.mesh", "res://.godot/imported/stairsWideWood.obj-776afc67914f44ad05efa7277ccb095d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

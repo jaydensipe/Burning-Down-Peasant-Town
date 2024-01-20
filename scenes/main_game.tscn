@@ -1,72 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwxplhemgu8ik"]
+[gd_scene load_steps=8 format=3 uid="uid://bwxplhemgu8ik"]
 
-[ext_resource type="PackedScene" uid="uid://c2t5opg8aa3f8" path="res://scenes/maps/test_map_1.tscn" id="1_73m3j"]
-[ext_resource type="PackedScene" uid="uid://cws2osv1anr8f" path="res://scenes/player/player.tscn" id="2_p6gf5"]
-[ext_resource type="PackedScene" uid="uid://cxwrkl1tqeqvw" path="res://scenes/burnables/props/test_burnable_01.tscn" id="3_7sv5c"]
+[ext_resource type="PackedScene" uid="uid://c2t5opg8aa3f8" path="res://scenes/maps/map01.tscn" id="1_73m3j"]
+[ext_resource type="Script" path="res://scenes/main_game.gd" id="1_uo4jy"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/level.gd" id="3_ujovp"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/level-manager-component.gd" id="5_mnhlh"]
+[ext_resource type="PackedScene" uid="uid://s3u6iv1ofgb4" path="res://scenes/maps/map02.tscn" id="5_wt6j2"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_7r5yt"]
-energy_multiplier = 3.0
+[sub_resource type="Resource" id="Resource_ocdix"]
+script = ExtResource("3_ujovp")
+level_name = "map01"
+level = ExtResource("1_73m3j")
 
-[sub_resource type="Sky" id="Sky_c2pdy"]
-sky_material = SubResource("PhysicalSkyMaterial_7r5yt")
-
-[sub_resource type="Environment" id="Environment_t4dtn"]
-background_mode = 2
-sky = SubResource("Sky_c2pdy")
-ambient_light_source = 3
-reflected_light_source = 2
-ssao_enabled = true
-ssil_enabled = true
-sdfgi_enabled = true
-glow_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.01
-volumetric_fog_gi_inject = 4.0
-adjustment_brightness = 1.6
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hlqoi"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_weokv"]
+[sub_resource type="Resource" id="Resource_1qcfn"]
+script = ExtResource("3_ujovp")
+level_name = "map02"
+level = ExtResource("5_wt6j2")
 
 [node name="MainGame" type="Node"]
+script = ExtResource("1_uo4jy")
 
-[node name="Map" type="Node3D" parent="."]
-metadata/_edit_lock_ = true
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("5_mnhlh")
+levels = Array[ExtResource("3_ujovp")]([SubResource("Resource_ocdix"), SubResource("Resource_1qcfn")])
 
-[node name="TestMap1" parent="Map" instance=ExtResource("1_73m3j")]
-
-[node name="Player" parent="." instance=ExtResource("2_p6gf5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9106, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_t4dtn")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.5, 5.16191e-08, 0.866025, -0.866025, 2.98023e-08, 0.5, 0, -1, 5.96046e-08, 0, 0, 0)
-light_energy = 2.0
-shadow_enabled = true
-
-[node name="TestBurnable01" parent="." instance=ExtResource("3_7sv5c")]
-transform = Transform3D(1.8, 0, 0, 0, 4.2, 0, 0, 0, 0.2, 1, 4, 6)
-
-[node name="TestBurnable02" parent="." instance=ExtResource("3_7sv5c")]
-transform = Transform3D(0.2, 0, 0, 0, 4.2, 0, 0, 0, 2.8, 0, 4, 5)
-
-[node name="TestBurnable03" parent="." instance=ExtResource("3_7sv5c")]
-transform = Transform3D(0.2, 0, 0, 0, 4.2, 0, 0, 0, 2.97, 2, 4, 5)
-
-[node name="TestBurnable04" parent="." instance=ExtResource("3_7sv5c")]
-transform = Transform3D(1.8, 0, 0, 0, 4.2, 0, 0, 0, 0.2, 1, 4, 4)
-
-[node name="TestBurnable05" parent="." instance=ExtResource("3_7sv5c")]
-transform = Transform3D(3.3, 0, 0, 0, 1, 0, 0, 0, 3.8, 1, 7, 5)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_hlqoi")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_weokv")
-skeleton = NodePath("../..")
+[connection signal="level_loaded" from="LevelManager" to="." method="_on_level_manager_level_loaded"]

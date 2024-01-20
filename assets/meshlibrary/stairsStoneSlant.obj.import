@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://r6pdupj1twe5"
+path="res://.godot/imported/stairsStoneSlant.obj-3b31ed17f5053ce96dcdf9e8c56597c5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairsStoneSlant.obj-3b31ed17f5053ce96dcdf9e8c56597c5.mesh"]
+
+source_file="res://assets/meshlibrary/stairsStoneSlant.obj"
+dest_files=["res://.godot/imported/stairsStoneSlant.obj-3b31ed17f5053ce96dcdf9e8c56597c5.mesh", "res://.godot/imported/stairsStoneSlant.obj-3b31ed17f5053ce96dcdf9e8c56597c5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

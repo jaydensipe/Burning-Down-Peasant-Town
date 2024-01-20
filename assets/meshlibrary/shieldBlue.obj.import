@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ce84ll8iqjwwo"
+path="res://.godot/imported/shieldBlue.obj-d5393af84e0e45ed3c366030eba55068.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shieldBlue.obj-d5393af84e0e45ed3c366030eba55068.mesh"]
+
+source_file="res://assets/meshlibrary/shieldBlue.obj"
+dest_files=["res://.godot/imported/shieldBlue.obj-d5393af84e0e45ed3c366030eba55068.mesh", "res://.godot/imported/shieldBlue.obj-d5393af84e0e45ed3c366030eba55068.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
