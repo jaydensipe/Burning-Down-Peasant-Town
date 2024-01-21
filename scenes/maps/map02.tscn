@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://s3u6iv1ofgb4"]
+[gd_scene load_steps=14 format=3 uid="uid://dfgl5sqtidbfl"]
 
 [ext_resource type="PackedScene" uid="uid://jtjq0bv3fa0d" path="res://scenes/burnables/props/burnable_house.tscn" id="1_cnt18"]
 [ext_resource type="Texture2D" uid="uid://c5tovnu4wuuxa" path="res://assets/textures/test_grass.jpg" id="2_q6sac"]

@@ -493,6 +493,8 @@ billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_n1jup")
 autoplay = "default"
+frame = 63
+frame_progress = 1.0
 speed_scale = 1.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

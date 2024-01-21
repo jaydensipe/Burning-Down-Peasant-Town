@@ -5,16 +5,12 @@ class_name Peasant
 
 var _current_burning_prop: BurnableProp = null
 
-func _physics_process(delta: float) -> void:
-	pass
-	#if (_current_burning_entity and !_current_burning_entity.being_serviced): return
-	
 func _ready() -> void:
+	super()
+	
 	health_component.death.connect(func():
 		if (is_instance_valid(_current_burning_prop)):
 			_current_burning_prop.being_serviced = false 
-		
-		burnable_component.burning = true
 	)
 	
 func _on_looking_state_physics_processing(delta: float) -> void:
@@ -60,11 +56,12 @@ func _on_pursuing_state_physics_processing(delta: float) -> void:
 
 func _on_navigation_agent_3d_target_reached() -> void:
 	state_chart.send_event("pursue_to_watering")
-	_current_burning_prop.being_serviced = true
 	
 func _on_watering_state_physics_processing(delta: float) -> void:
 	if !(is_instance_valid(_current_burning_prop) or _current_burning_prop.burnable_component.burning): state_chart.send_event("watering_to_looking")
-	_current_burning_prop.health_component.apply_health(1.0, _current_burning_prop.health_component.HEAL_TYPES.HEALTH)
+	
+	_current_burning_prop.being_serviced = true
+	_current_burning_prop.health_component.apply_health(1.0, _current_burning_prop.health_component.HEALTH_TYPES.HEALTH)
 	
 
 

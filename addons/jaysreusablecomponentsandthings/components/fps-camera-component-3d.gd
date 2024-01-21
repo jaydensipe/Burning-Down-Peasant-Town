@@ -71,6 +71,7 @@ var y_offset: float = 1.25
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#Input.use_accumulated_input = false
 	swayPos = viewmodel_origin
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -120,6 +121,11 @@ func calc_bob (freqmod: float, mode, bob_i: int, bob: float):
 
 func _process(delta: float) -> void:
 	deltaTime = delta
+	
+	if (character.health_component.is_dead):
+		rotation_degrees.z = 80
+		transform.origin = Vector3(0, 0.75, 0)
+		return
 	
 	# Set points of origin
 	rotation_degrees = Vector3(mouse_rotation_x, 0, 0)

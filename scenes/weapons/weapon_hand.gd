@@ -29,7 +29,6 @@ func _on_idle_state_entered() -> void:
 	gpu_particles_3d.emitting = false
 
 func _on_primary_attacking_state_physics_processing(delta: float) -> void:
-	
 	gpu_particles_3d.emitting = true
 	
 	if (ray_cast_3d.is_colliding()):
@@ -41,7 +40,7 @@ func _on_primary_attacking_state_physics_processing(delta: float) -> void:
 	collision = collision[0]
 	if !(collision.is_in_group("burnable")): return
 	
-	collision.health_component.apply_health(damage_component.damage, collision.health_component.HEAL_TYPES.DAMAGE)
+	collision.health_component.apply_health(damage_component.damage, collision.health_component.HEALTH_TYPES.DAMAGE)
 
 
 func _on_alternate_state_entered() -> void:

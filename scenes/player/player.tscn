@@ -1,16 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://cws2osv1anr8f"]
+[gd_scene load_steps=13 format=3 uid="uid://cws2osv1anr8f"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_2bcsv"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/move_stats.gd" id="2_4nqdj"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/health-component.gd" id="2_q55bc"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/fps-camera-component-3d.gd" id="3_5e0qq"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/character-movement-3d.gd" id="3_skxvm"]
 [ext_resource type="PackedScene" uid="uid://dxbyemql1gkol" path="res://scenes/weapons/weapon_hand.tscn" id="4_rqlk5"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/weapon-manager-component.gd" id="5_3aw06"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/damage-component-3d.gd" id="7_s2h8t"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_uo7vp"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d6wjp"]
 
 [sub_resource type="Resource" id="Resource_w6o5x"]
 script = ExtResource("2_4nqdj")
@@ -24,9 +21,18 @@ apply_air_acceleration = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_v6r6t"]
 size = Vector3(1, 2.00397, 0.001)
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uo7vp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d6wjp"]
+
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 3
 script = ExtResource("1_2bcsv")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2_q55bc")
+max_health = 100.0
+_health = 100.0
 
 [node name="FPSCameraComponent3D" type="Camera3D" parent="." node_paths=PackedStringArray("character", "viewmodel_container")]
 script = ExtResource("3_5e0qq")
@@ -44,15 +50,7 @@ starting_weapon = NodePath("WeaponHand")
 [node name="WeaponHand" parent="FPSCameraComponent3D/WeaponManagerComponent" instance=ExtResource("4_rqlk5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, -0.06, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_uo7vp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_d6wjp")
-
-[node name="CharacterMovement3D" type="Node" parent="." node_paths=PackedStringArray("character")]
+[node name="CharacterMovement3D" type="Node3D" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("3_skxvm")
 character = NodePath("..")
 move_stats = SubResource("Resource_w6o5x")
@@ -63,3 +61,11 @@ script = ExtResource("7_s2h8t")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DamageComponent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00204, 0.4995)
 shape = SubResource("BoxShape3D_v6r6t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_uo7vp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_d6wjp")
