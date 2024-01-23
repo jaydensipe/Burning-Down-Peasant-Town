@@ -1,6 +1,10 @@
 extends KnockbackComponent3D
-@onready var gpu_particles_3d: GPUParticles3D = $GPUParticles3D
 
+@onready var audio_explosion: AudioStreamPlayer3D = $AudioExplosion
+
+func _ready() -> void:
+	AudioManager.play_audio_at_position_3d(audio_explosion, global_position)
+		
 func _on_body_entered(body: Node3D) -> void:
 	if (body is Enemy):
 		if (body is Peasant):
@@ -23,3 +27,7 @@ func _on_body_entered(body: Node3D) -> void:
 		z_scale = 15.0
 		override_y = 4.0
 		knockback(body.character_movement_3d.character)
+
+
+func _on_tree_entered() -> void:
+	AudioManager.play_audio_at_position_3d(audio_explosion, global_position)

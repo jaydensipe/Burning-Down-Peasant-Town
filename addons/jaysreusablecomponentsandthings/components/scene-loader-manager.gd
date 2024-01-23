@@ -11,6 +11,9 @@ func load_packed_scene(packed_scene: PackedScene):
 	var load_scene: LoadScreen = LOAD_SCREEN_SCENE.instantiate()
 	get_tree().root.add_child(load_scene)
 	
+# TODO: GET RID OF
+	await get_tree().create_timer(1.0).timeout
+	
 	_scene_path = packed_scene.resource_path
 	ResourceLoader.load_threaded_request(_scene_path)
 	

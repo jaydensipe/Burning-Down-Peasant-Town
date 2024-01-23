@@ -67,11 +67,12 @@ const kick_amount: float = 0.6
 var idle_time: float = 0.0
 var mouse_move: Vector2 = Vector2.ZERO
 var mouse_rotation_x: float = 0.0
-var y_offset: float = 1.25          
+var y_offset: float = 1.25         
+
+signal footstep 
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	#Input.use_accumulated_input = false
 	swayPos = viewmodel_origin
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -93,7 +94,6 @@ var cl_bobcycle : float = 0.8         # default: 0.8
 func calc_bob (freqmod: float, mode, bob_i: int, bob: float):
 	var cycle : float
 	var vel : Vector3
-	
 	
 	_bob_times[bob_i] += deltaTime * freqmod
 	cycle = _bob_times[bob_i] - int( _bob_times[bob_i] / cl_bobcycle ) * cl_bobcycle
@@ -149,10 +149,11 @@ func _process(delta: float) -> void:
 		view_model_idle()
 	else:
 		idle_time = 0.0
-		add_bob()
-		view_model_bob()
 		
-		if (enable_bob): 
+		if (character.is_on_floor()): add_bob()
+			
+		view_model_bob()
+		if (enable_bob and character.is_on_floor()): 
 			view_bob_classic()
 			
 
@@ -250,6 +251,7 @@ func calc_bob_classic():
 	cycle /= bob_cycle
 	if cycle < bob_up:
 		cycle = PI * cycle / bob_up
+		footstep.emit()		
 	else:
 		cycle = PI + PI * (cycle - bob_up) / (1.0 - bob_up)
 	

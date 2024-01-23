@@ -1,9 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2a2jbf0be0oj"]
+[gd_scene load_steps=12 format=3 uid="uid://c2a2jbf0be0oj"]
 
+[ext_resource type="Theme" uid="uid://bswcw4hyolulw" path="res://ui/theme.tres" id="1_dy3sg"]
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_q445k"]
+[ext_resource type="Texture2D" uid="uid://qayeye41cdfx" path="res://ui/main_menu.png" id="2_myccf"]
+[ext_resource type="Texture2D" uid="uid://do2hmif3kdwbg" path="res://ui/main_menu_empty.png" id="4_jmuai"]
+[ext_resource type="AudioStream" uid="uid://dl7ht54fk57mt" path="res://sounds/main_menu_music.wav" id="4_mm4eb"]
+[ext_resource type="Texture2D" uid="uid://cysap4dy2lq0t" path="res://ui/btpt_logo_final.png" id="6_uang4"]
+[ext_resource type="Texture2D" uid="uid://nfq3dquyi2bf" path="res://ui/gamejam.png" id="7_wi1vs"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_0xre7"]
-font_size = 96
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tonw0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7obw8"]
+
+[sub_resource type="Shader" id="Shader_rmjw7"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+	VERTEX.x += cos(TIME + VERTEX.x) * 3.0;
+	VERTEX.y += sin(TIME + VERTEX.y) * 3.5;
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ss1c8"]
+shader = SubResource("Shader_rmjw7")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,7 +41,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_dy3sg")
 script = ExtResource("1_q445k")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("2_myccf")
+
+[node name="MainMenuEmpty" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("4_jmuai")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -21,12 +68,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -687.0
-offset_top = -133.5
-offset_right = 687.0
-offset_bottom = 133.5
+offset_left = -392.5
+offset_top = -5.85999
+offset_right = 392.5
+offset_bottom = 509.14
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
@@ -35,22 +84,93 @@ theme_override_constants/margin_bottom = 15
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-
-[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Stop, Burn in Porkchop Town"
-label_settings = SubResource("LabelSettings_0xre7")
-horizontal_alignment = 1
+theme_override_constants/separation = 20
 
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Play"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.858824, 0.858824, 0.858824, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tonw0")
+text = "PLAY"
+flat = true
 
 [node name="HowToPlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "How to Play"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.858824, 0.858824, 0.858824, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7obw8")
+text = "HOW TO PLAY"
+flat = true
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit
-"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.858824, 0.858824, 0.858824, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7obw8")
+text = "QUIT"
+flat = true
+
+[node name="GameJamText" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -701.0
+offset_top = -115.0
+offset_right = -169.0
+offset_bottom = -36.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "[right]A game created for the 
+Pirate Software - Game Jam 14[/right]"
+fit_content = true
+scroll_active = false
+
+[node name="GameJamText2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1871.0
+offset_top = -119.0
+offset_right = -816.0
+offset_bottom = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "Created by Jayden, Stephen & Ross 
+Special Thanks: Helix Güd, Kenney, PirateDev"
+fit_content = true
+
+[node name="AudioMainMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mm4eb")
+volume_db = -20.0
+autoplay = true
+
+[node name="BtptLogo" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ss1c8")
+position = Vector2(954, 262)
+texture = ExtResource("6_uang4")
+
+[node name="Gamejam" type="Sprite2D" parent="."]
+position = Vector2(1835, 999)
+scale = Vector2(0.297381, 0.297381)
+texture = ExtResource("7_wi1vs")

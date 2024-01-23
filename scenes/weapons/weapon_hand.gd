@@ -8,6 +8,10 @@ extends Weapon3D
 @onready var projectile_spawn_location: Marker3D = $AlternateAttack/ProjectileSpawnLocation
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var state_chart: StateChart = $StateChart
+@onready var audio_fire_ignite: AudioStreamPlayer = $AudioFireIgnite
+@onready var audio_fire_loop: AudioStreamPlayer = $AudioFireLoop
+@onready var audio_fire_poof: AudioStreamPlayer = $AudioFirePoof
+@onready var audio_fire_conjure: AudioStreamPlayer = $AudioFireConjure
 
 func _ready() -> void:
 	stopped_shooting.connect(func():
@@ -30,6 +34,8 @@ func _on_idle_state_entered() -> void:
 
 func _on_primary_attacking_state_physics_processing(delta: float) -> void:
 	gpu_particles_3d.emitting = true
+	if !(audio_fire_loop.playing):
+		audio_fire_loop.play()
 	
 	if (ray_cast_3d.is_colliding()):
 		decal_spawner_component.spawn_at_location(ray_cast_3d.get_collision_point())
@@ -45,6 +51,13 @@ func _on_primary_attacking_state_physics_processing(delta: float) -> void:
 
 func _on_alternate_state_entered() -> void:
 	projectile_spawner_component.spawn_at_location_with_transform(projectile_spawn_location.global_transform)
-	
 	animation_player.animation_finished.connect(func(_animation_name): state_chart.send_event("alternate_to_idle"))
-	
+
+
+func _on_flame_loop_state_entered() -> void:
+	audio_fire_ignite.play()
+
+
+func _on_flame_loop_state_exited() -> void:
+	audio_fire_poof.play()
+	audio_fire_loop.stop()

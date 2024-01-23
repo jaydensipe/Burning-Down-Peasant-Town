@@ -103,6 +103,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_otrv4")
+tooltips = Array[String](["Peasants can be knocked up with your fire bolt attack.", "YOUR GOAL: Turn the Village into a smoldering, fiery mess."])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -159,7 +160,6 @@ offset_right = 211.0
 offset_bottom = -27.8594
 grow_horizontal = 2
 grow_vertical = 0
-text = "Peasants can be knocked up with your Fire Bolt attack! Peasants can be knocked up with your Fire Bolt attack! Peasants can be knocked up with your Fire Bolt attack!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

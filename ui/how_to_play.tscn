@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cg4ypbhby0i7v"]
+
+[ext_resource type="Texture2D" uid="uid://20twfse38ieu" path="res://ui/how_to_play.png" id="1_hgl2g"]
+[ext_resource type="Theme" uid="uid://bswcw4hyolulw" path="res://ui/theme.tres" id="1_lie7u"]
+[ext_resource type="Script" path="res://ui/how_to_play.gd" id="2_8yhkn"]
+[ext_resource type="Texture2D" uid="uid://bh6kr77bfkv28" path="res://ui/howtoplay_logo.png" id="3_jm5et"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_miqdx"]
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_lie7u")
+script = ExtResource("2_8yhkn")
+
+[node name="HowToPlay" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_hgl2g")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = -5.0
+offset_top = 15.0
+offset_right = 313.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.858824, 0.858824, 0.858824, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_miqdx")
+text = "BACK"
+flat = true
+
+[node name="HowtoplayLogo" type="Sprite2D" parent="."]
+position = Vector2(960, 285.115)
+texture = ExtResource("3_jm5et")

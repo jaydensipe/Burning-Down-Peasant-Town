@@ -20,15 +20,16 @@ func spawn_at_location(global_spawn_position: Vector3 = global_position, parent:
 	if !(_can_spawn): return
 	
 	var instance = scene.instantiate()
-	parent.add_child(instance)
 	if (randomize_x):
-		instance.global_rotation_degrees = Vector3(randf_range(0, 360), 0.0, 0.0)
+		instance.rotation_degrees = Vector3(randf_range(0, 360), 0.0, 0.0)
 	if (randomize_y):
-		instance.global_rotation_degrees = Vector3(0.0, randf_range(0, 360), 0.0)
+		instance.rotation_degrees = Vector3(0.0, randf_range(0, 360), 0.0)
 	if (randomize_z):
-		instance.global_rotation_degrees = Vector3(0.0, 0.0, randf_range(0, 360))
+		instance.rotation_degrees = Vector3(0.0, 0.0, randf_range(0, 360))
 	
-	instance.global_position = global_spawn_position
+	instance.position = global_spawn_position
+	
+	parent.add_child(instance)
 	
 	if (spawn_delay_timer):
 		_can_spawn = false
@@ -44,15 +45,16 @@ func spawn_at_location_with_transform(global_spawn_transform: Transform3D = glob
 	if !(_can_spawn): return
 	
 	var instance = scene.instantiate()
-	parent.add_child(instance)
 	if (randomize_x):
-		instance.global_rotation_degrees = Vector3(randf_range(0, 360), 0.0, 0.0)
+		instance.rotation_degrees = Vector3(randf_range(0, 360), 0.0, 0.0)
 	if (randomize_y):
-		instance.global_rotation_degrees = Vector3(0.0, randf_range(0, 360), 0.0)
+		instance.rotation_degrees = Vector3(0.0, randf_range(0, 360), 0.0)
 	if (randomize_z):
-		instance.global_rotation_degrees = Vector3(0.0, 0.0, randf_range(0, 360))
+		instance.rotation_degrees = Vector3(0.0, 0.0, randf_range(0, 360))
 	
-	instance.global_transform = global_spawn_transform
+	instance.transform = global_spawn_transform
+	
+	parent.add_child(instance)
 	
 	if (spawn_delay_timer):
 		_can_spawn = false

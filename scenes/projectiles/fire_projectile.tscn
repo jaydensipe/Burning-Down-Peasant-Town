@@ -33,6 +33,6 @@ speed = 20.0
 script = ExtResource("3_pf22g")
 scene = ExtResource("4_biflb")
 delete_timer = true
-delete_time = 0.5
+delete_time = 0.4
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

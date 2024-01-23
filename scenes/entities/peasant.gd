@@ -58,7 +58,9 @@ func _on_navigation_agent_3d_target_reached() -> void:
 	state_chart.send_event("pursue_to_watering")
 	
 func _on_watering_state_physics_processing(delta: float) -> void:
-	if !(is_instance_valid(_current_burning_prop) or _current_burning_prop.burnable_component.burning): state_chart.send_event("watering_to_looking")
+	if !(is_instance_valid(_current_burning_prop) and _current_burning_prop.burnable_component.burning): 
+		state_chart.send_event("watering_to_looking")
+		return
 	
 	_current_burning_prop.being_serviced = true
 	_current_burning_prop.health_component.apply_health(1.0, _current_burning_prop.health_component.HEALTH_TYPES.HEALTH)

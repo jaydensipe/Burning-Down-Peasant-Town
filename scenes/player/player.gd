@@ -4,14 +4,24 @@ class_name Player
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var character_movement_3d: CharacterMovement3D = $CharacterMovement3D
 @onready var fps_camera_component_3d: FPSCameraComponent3D = $FPSCameraComponent3D
+@onready var audio_foot_step: AudioStreamPlayer3D = $AudioFootStep
 
 func _ready() -> void:
 	health_component.death.connect(GlobalEventBus.signal_player_death)
+	fps_camera_component_3d.footstep.connect(func():
+		if !(audio_foot_step.playing):
+			audio_foot_step.play()
+	)
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		character_movement_3d.jump()
 		
 	character_movement_3d.apply_player_input_direction(Input.get_vector("move_left", "move_right", "move_forward", "move_backward"))
-	
+	_footsteps()
+
 	GlobalEventBus.signal_transmit_player_position(global_position)
+	
+func _footsteps() -> void:
+	pass
+		

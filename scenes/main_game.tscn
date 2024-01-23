@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwxplhemgu8ik"]
+[gd_scene load_steps=10 format=3 uid="uid://bwxplhemgu8ik"]
 
 [ext_resource type="PackedScene" uid="uid://c2t5opg8aa3f8" path="res://scenes/maps/map01.tscn" id="1_73m3j"]
 [ext_resource type="Script" path="res://scenes/main_game.gd" id="1_uo4jy"]
 [ext_resource type="PackedScene" uid="uid://c2a2jbf0be0oj" path="res://ui/main_menu.tscn" id="2_kevqd"]
+[ext_resource type="PackedScene" uid="uid://cg4ypbhby0i7v" path="res://ui/how_to_play.tscn" id="3_3pnrx"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/level.gd" id="3_ujovp"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/level-manager-component.gd" id="5_mnhlh"]
 [ext_resource type="PackedScene" uid="uid://dfgl5sqtidbfl" path="res://scenes/maps/map02.tscn" id="5_wt6j2"]
@@ -21,6 +22,11 @@ level = ExtResource("5_wt6j2")
 script = ExtResource("1_uo4jy")
 
 [node name="MainMenu" parent="." instance=ExtResource("2_kevqd")]
+
+[node name="HowToPlay" parent="MainMenu" instance=ExtResource("3_3pnrx")]
+layout_mode = 1
+offset_left = 1920.0
+offset_right = 1920.0
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("5_mnhlh")

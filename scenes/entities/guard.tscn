@@ -15,7 +15,7 @@
 
 [sub_resource type="Resource" id="Resource_vfyl3"]
 script = ExtResource("6_186tv")
-speed = 25.0
+speed = 40.0
 jump_height = 5.0
 acceleration = 10.0
 air_acceleration = 2.0
