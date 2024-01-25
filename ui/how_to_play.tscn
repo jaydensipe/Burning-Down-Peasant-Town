@@ -1,9 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://cg4ypbhby0i7v"]
+[gd_scene load_steps=16 format=3 uid="uid://cg4ypbhby0i7v"]
 
-[ext_resource type="Texture2D" uid="uid://20twfse38ieu" path="res://ui/how_to_play.png" id="1_hgl2g"]
-[ext_resource type="Theme" uid="uid://bswcw4hyolulw" path="res://ui/theme.tres" id="1_lie7u"]
+[ext_resource type="Texture2D" uid="uid://20twfse38ieu" path="res://ui/assets/how_to_play.png" id="1_hgl2g"]
 [ext_resource type="Script" path="res://ui/how_to_play.gd" id="2_8yhkn"]
-[ext_resource type="Texture2D" uid="uid://bh6kr77bfkv28" path="res://ui/howtoplay_logo.png" id="3_jm5et"]
+[ext_resource type="Texture2D" uid="uid://bh6kr77bfkv28" path="res://ui/assets/howtoplay_logo.png" id="3_jm5et"]
+[ext_resource type="Texture2D" uid="uid://durnbuyd0pmmh" path="res://ui/assets/how_to_play_house.png" id="4_tghqg"]
+[ext_resource type="Texture2D" uid="uid://cc6mndfq4d4sg" path="res://ui/assets/keyboard_w.png" id="5_asuqk"]
+[ext_resource type="Texture2D" uid="uid://21qs0rin280j" path="res://ui/assets/how_to_play_guard.png" id="5_i5ia5"]
+[ext_resource type="Texture2D" uid="uid://bjdrnoegr6v4r" path="res://ui/assets/keyboard_a.png" id="6_mroui"]
+[ext_resource type="Texture2D" uid="uid://cgqldcjsi54ut" path="res://ui/assets/keyboard_s.png" id="7_f1d44"]
+[ext_resource type="Texture2D" uid="uid://3v3ntecco1ra" path="res://ui/assets/keyboard_d.png" id="8_q6njd"]
+[ext_resource type="Texture2D" uid="uid://dqfbyfd5n65r1" path="res://ui/assets/mouse_left.png" id="9_5sm6v"]
+[ext_resource type="Texture2D" uid="uid://dv1wpbjx13k6u" path="res://ui/assets/mouse_right.png" id="10_d1uh4"]
+[ext_resource type="Texture2D" uid="uid://cgxhwr2c3gk8" path="res://ui/assets/keyboard_space.png" id="11_moy40"]
+
+[sub_resource type="Shader" id="Shader_cubx8"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+	VERTEX.x += cos(TIME + VERTEX.x) * 3.0;
+	VERTEX.y += sin(TIME + VERTEX.y) * 3.5;
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eocry"]
+shader = SubResource("Shader_cubx8")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_miqdx"]
 
@@ -16,14 +46,29 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("1_lie7u")
 script = ExtResource("2_8yhkn")
 
 [node name="HowToPlay" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("1_hgl2g")
 
+[node name="HowToPlayLogo" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_eocry")
+position = Vector2(960, 285.115)
+texture = ExtResource("3_jm5et")
+
+[node name="HowToPlayHouse" type="Sprite2D" parent="."]
+position = Vector2(257.75, 703.5)
+scale = Vector2(0.302619, 0.301873)
+texture = ExtResource("4_tghqg")
+
+[node name="HowToPlayHouse2" type="Sprite2D" parent="."]
+position = Vector2(1664, 703.5)
+scale = Vector2(0.409608, 0.402111)
+texture = ExtResource("5_i5ia5")
+
 [node name="BackButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = -5.0
 offset_top = 15.0
 offset_right = 313.0
@@ -37,6 +82,95 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_miqdx")
 text = "BACK"
 flat = true
 
-[node name="HowtoplayLogo" type="Sprite2D" parent="."]
-position = Vector2(960, 285.115)
-texture = ExtResource("3_jm5et")
+[node name="MovementSettings" type="Node2D" parent="."]
+position = Vector2(737, 729)
+
+[node name="MovementLabel" type="Label" parent="MovementSettings"]
+offset_left = 157.0
+offset_top = -205.0
+offset_right = 322.0
+offset_bottom = -152.0
+theme_override_font_sizes/font_size = 32
+text = "Movement"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FireboltLabel" type="Label" parent="MovementSettings"]
+offset_left = 122.0
+offset_right = 287.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "Firebolt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttackLabel" type="Label" parent="MovementSettings"]
+offset_right = 165.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "Attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JumpLabel" type="Label" parent="MovementSettings"]
+offset_left = 291.0
+offset_top = 21.0
+offset_right = 456.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 32
+text = "Jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MouseLeft" type="Sprite2D" parent="MovementSettings"]
+position = Vector2(82, 94)
+texture = ExtResource("9_5sm6v")
+
+[node name="MouseRight" type="Sprite2D" parent="MovementSettings"]
+position = Vector2(202, 94)
+texture = ExtResource("10_d1uh4")
+
+[node name="KeyboardSpace" type="Sprite2D" parent="MovementSettings"]
+position = Vector2(371, 99)
+texture = ExtResource("11_moy40")
+
+[node name="KeyboardW" type="Sprite2D" parent="MovementSettings"]
+position = Vector2(239, -134)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_asuqk")
+
+[node name="KeyboardA" type="Sprite2D" parent="MovementSettings"]
+position = Vector2(183, -78)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_mroui")
+
+[node name="KeyboardS" type="Sprite2D" parent="MovementSettings"]
+position = Vector2(239, -78)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_f1d44")
+
+[node name="KeyboardD" type="Sprite2D" parent="MovementSettings"]
+position = Vector2(295, -78)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_q6njd")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 507.0
+offset_right = 667.0
+offset_bottom = 900.0
+theme_override_font_sizes/font_size = 32
+text = "Burn down all houses in the Village to win! Once a house begins burning, it must be defended from Peasants, as they will try to put it out."
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1253.0
+offset_top = 504.0
+offset_right = 1472.0
+offset_bottom = 897.0
+theme_override_font_sizes/font_size = 32
+text = "Beware of Guards! They will do their best to defend the 	Village. Blast them down with your firebolt, or use it as a quick escape mechanism."
+horizontal_alignment = 2
+autowrap_mode = 2

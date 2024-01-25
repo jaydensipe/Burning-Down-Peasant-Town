@@ -5,11 +5,12 @@
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/health-component.gd" id="2_q55bc"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/fps-camera-component-3d.gd" id="3_5e0qq"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/character-movement-3d.gd" id="3_skxvm"]
+[ext_resource type="PackedScene" uid="uid://d31cnnk2lwhc7" path="res://assets/particles/player_spawn.tscn" id="4_dueu7"]
 [ext_resource type="PackedScene" uid="uid://dxbyemql1gkol" path="res://scenes/weapons/weapon_hand.tscn" id="4_rqlk5"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/weapon-manager-component.gd" id="5_3aw06"]
-[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/damage-component-3d.gd" id="7_s2h8t"]
 [ext_resource type="AudioStream" uid="uid://dcd6srjr5wjag" path="res://sounds/grass_step_1.mp3" id="9_dgkkd"]
 [ext_resource type="AudioStream" uid="uid://csobfwxwm1g4l" path="res://sounds/grass_step_2.mp3" id="10_8fmu1"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/spawner-component-3d.gd" id="10_l2k3l"]
 
 [sub_resource type="Resource" id="Resource_w6o5x"]
 script = ExtResource("2_4nqdj")
@@ -19,9 +20,6 @@ acceleration = 20.0
 air_acceleration = 2.0
 apply_acceleration = true
 apply_air_acceleration = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_v6r6t"]
-size = Vector3(1, 2.00397, 0.001)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_uo7vp"]
 
@@ -43,41 +41,43 @@ script = ExtResource("2_q55bc")
 max_health = 100.0
 _health = 100.0
 
-[node name="FPSCameraComponent3D" type="Camera3D" parent="." node_paths=PackedStringArray("character", "viewmodel_container")]
-script = ExtResource("3_5e0qq")
-character = NodePath("..")
-viewmodel_container = NodePath("WeaponManagerComponent")
-mouse_sensitivity = 0.1
-viewmodel_origin = Vector3(0.15, -0.295, -0.195)
-bob_amount = 0.02
-roll_amount = 30.0
-
-[node name="WeaponManagerComponent" type="Node3D" parent="FPSCameraComponent3D" node_paths=PackedStringArray("starting_weapon")]
-script = ExtResource("5_3aw06")
-starting_weapon = NodePath("WeaponHand")
-
-[node name="WeaponHand" parent="FPSCameraComponent3D/WeaponManagerComponent" instance=ExtResource("4_rqlk5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, -0.06, 0)
-
 [node name="CharacterMovement3D" type="Node3D" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("3_skxvm")
 character = NodePath("..")
 move_stats = SubResource("Resource_w6o5x")
 
-[node name="DamageComponent" type="Area3D" parent="."]
-script = ExtResource("7_s2h8t")
+[node name="SpawnEffectSpawnerComponent3D" type="Node3D" parent="."]
+script = ExtResource("10_l2k3l")
+scene = ExtResource("4_dueu7")
+delete_timer = true
+delete_time = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageComponent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00204, 0.4995)
-shape = SubResource("BoxShape3D_v6r6t")
+[node name="FPSCameraComponent3D" type="Camera3D" parent="." node_paths=PackedStringArray("character", "viewmodel_container")]
+script = ExtResource("3_5e0qq")
+character = NodePath("..")
+viewmodel_container = NodePath("WeaponContainerComponent")
+mouse_sensitivity = 0.15
+viewmodel_origin = Vector3(-0.035, -0.325, -0.25)
+bob_amount = 0.02
+enable_idle = false
+roll_amount = 30.0
+
+[node name="WeaponContainerComponent" type="Node3D" parent="FPSCameraComponent3D" node_paths=PackedStringArray("wielder", "starting_weapon")]
+script = ExtResource("5_3aw06")
+wielder = NodePath("../..")
+starting_weapon = NodePath("WeaponHand")
+
+[node name="WeaponHand" parent="FPSCameraComponent3D/WeaponContainerComponent" instance=ExtResource("4_rqlk5")]
+weapon_description = "Shoot fire"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_uo7vp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_d6wjp")
 
-[node name="AudioFootStep" type="AudioStreamPlayer3D" parent="."]
+[node name="FootStepAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_p3g6s")

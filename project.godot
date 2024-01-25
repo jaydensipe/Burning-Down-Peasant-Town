@@ -10,25 +10,26 @@ config_version=5
 
 [application]
 
-config/name="Probable Palm Tree Jam"
-config/description="Made for 2024 Pirate Dev Game Jam! :)"
+config/name="Burning Down Peasant Town"
+config/description="A game about lighting shit on fire. Made for 2024 Pirate Dev Game Jam! :)"
+config/version="1.0"
 config/tags=PackedStringArray("game_jam")
 run/main_scene="res://scenes/main_game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 run/max_fps=200
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="res://ui/helix.png"
+boot_splash/image="res://ui/assets/helix.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
 
-Panku="*res://addons/panku_console/console.tscn"
 GlobalEventBus="*res://scripts/global_event_bus.gd"
 GlobalGameInformation="*res://scripts/global_game_information.gd"
 SceneLoaderManager="*res://addons/jaysreusablecomponentsandthings/components/scene-loader-manager.gd"
 AudioManager="*res://addons/jaysreusablecomponentsandthings/components/audio-manager.gd"
+Panku="*res://addons/panku_console/console.tscn"
 
 [display]
 
@@ -36,7 +37,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
-window/vsync/vsync_mode=3
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 
@@ -52,6 +53,10 @@ folder_colors={
 "res://sounds/": "purple",
 "res://ui/": "green"
 }
+
+[gui]
+
+theme/custom="res://ui/theme.tres"
 
 [input]
 
@@ -93,7 +98,14 @@ alternate_fire={
 
 [layer_names]
 
-3d_physics/layer_1="Burnables"
+3d_render/layer_1="Geometry"
+3d_render/layer_2="Decals"
+3d_render/layer_3="Particles"
+3d_render/layer_4="Models"
+3d_physics/layer_1="Geometry"
+3d_physics/layer_2="Burnables"
+3d_physics/layer_3="Player"
+3d_physics/layer_4="Projectiles"
 
 [physics]
 
@@ -107,4 +119,5 @@ jolt_3d/collisions/areas_detect_static_bodies=true
 textures/canvas_textures/default_texture_filter=0
 textures/default_filters/anisotropic_filtering_level=4
 anti_aliasing/quality/msaa_3d=2
+anti_aliasing/quality/use_debanding=true
 occlusion_culling/use_occlusion_culling=true

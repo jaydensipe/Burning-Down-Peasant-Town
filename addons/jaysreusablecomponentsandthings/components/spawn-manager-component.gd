@@ -15,10 +15,10 @@ func _ready() -> void:
 		await get_tree().create_timer(time_before_spawns).timeout
 		
 		var enemy = scenes_to_spawn[_weighted_spawn_index.pick_random()].scene.instantiate()
-		get_parent().add_child(enemy)
-		
 		var spawn_location: Marker3D = _random_spawn_markers.pick_random()
-		enemy.global_position = Vector3(spawn_location.global_position.x, spawn_location.global_position.y + y_offset, spawn_location.global_position.z)
+		enemy.position = Vector3(spawn_location.global_position.x, spawn_location.global_position.y + y_offset, spawn_location.global_position.z)
+		
+		get_parent().add_child(enemy)
 		
 	
 func _init_random_weighted_spawns():

@@ -2,7 +2,7 @@ extends Node
 class_name BurnableComponent
 
 
-const FIRE = preload("res://addons/jaysreusablecomponentsandthings/assets/fire/fire.tscn")
+@onready var fire = preload("res://addons/jaysreusablecomponentsandthings/assets/fire/fire.tscn").instantiate()
 var burning: bool = false:
 	set(value):
 		burning = value
@@ -15,6 +15,10 @@ var burning: bool = false:
 				_default_burn_vfx_3d()
 		else:
 			burn_timer.stop()
+			
+			if (use_3d_burn_effects):
+				_default_burn_vfx_3d(true)
+				
 @export var actor: Node
 @export var burn_timer: Timer
 
@@ -31,16 +35,21 @@ signal finished_burn()
 func _ready() -> void:
 	burn_timer.timeout.connect(func(): _burn())
 
-func _default_burn_vfx_3d() -> void:
-	var material: StandardMaterial3D = mesh.get_surface_override_material(0)
-	get_tree().create_tween().tween_property(material, "albedo_color", burn_hue, initial_discolor_time)
-	var f = FIRE.instantiate()
-	f.transform.scaled(Vector3(10.0, 10.0, 10.0))
-	owner.add_child(f)
+func _default_burn_vfx_3d(disable: bool = false) -> void:
+	var material: StandardMaterial3D = mesh.get_active_material(0).duplicate()
+	mesh.material_override = material
+	
+	if (disable):
+		get_tree().create_tween().tween_property(material, "albedo_color", Color.WEB_GRAY, initial_discolor_time)
+		
+		actor.remove_child(fire)
+	else:
+		get_tree().create_tween().tween_property(material, "albedo_color", burn_hue, initial_discolor_time)
+		fire.scale = (mesh.global_transform * mesh.mesh.get_aabb()).size * 0.6
+		actor.add_child(fire)
 	
 func _default_burn_vfx_2d() -> void:
 	pass
-	
 
 func _burn() -> void:
 	finished_burn.emit()

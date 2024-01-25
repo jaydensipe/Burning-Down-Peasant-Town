@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c05rkr4g8r3wk"]
-
-[ext_resource type="Texture2D" uid="uid://bhuompqsij51w" path="res://addons/kenney_particle_pack/scorch_01.png" id="1_utmdc"]
-
-[node name="BurnDecal" type="Decal"]
-size = Vector3(5, 5, 5)
-texture_albedo = ExtResource("1_utmdc")
-modulate = Color(0, 0, 0, 1)
-cull_mask = 1048571

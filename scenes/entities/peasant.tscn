@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bggpm5uoachor"]
+[gd_scene load_steps=14 format=3 uid="uid://bggpm5uoachor"]
 
 [ext_resource type="Script" path="res://scenes/entities/peasant.gd" id="1_ige6f"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/health-component.gd" id="1_u1557"]
@@ -9,8 +9,6 @@
 [ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="4_g6fcg"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="5_hx8tt"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/burnable-component.gd" id="9_cvxra"]
-[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/spawner-component-3d.gd" id="10_yumgq"]
-[ext_resource type="PackedScene" uid="uid://ddhcwbc3wb3en" path="res://assets/particles/smoke_particle.tscn" id="11_scvpf"]
 
 [sub_resource type="Resource" id="Resource_di7d1"]
 script = ExtResource("3_32lm6")
@@ -32,6 +30,8 @@ radius = 0.383436
 height = 1.52117
 
 [node name="Peasant" type="CharacterBody3D" groups=["burnable"]]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_ige6f")
 
 [node name="StateChart" type="Node" parent="."]
@@ -89,10 +89,6 @@ burn_hue = Color(0.223529, 0.223529, 0.223529, 1)
 script = ExtResource("2_c1hh4")
 character = NodePath("..")
 move_stats = SubResource("Resource_di7d1")
-
-[node name="SpawnerComponent" type="Node3D" parent="."]
-script = ExtResource("10_yumgq")
-scene = ExtResource("11_scvpf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)

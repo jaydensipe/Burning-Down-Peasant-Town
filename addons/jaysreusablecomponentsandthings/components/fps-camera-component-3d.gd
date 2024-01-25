@@ -73,11 +73,13 @@ signal footstep
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.use_accumulated_input = false
 	swayPos = viewmodel_origin
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		mouse_move = event.relative * 0.1
+		# this changes view bob amount, make sure to expose
+		mouse_move = event.relative * 0.75 
 		mouse_rotation_x -= event.relative.y * mouse_sensitivity
 		mouse_rotation_x = clamp(mouse_rotation_x, -90, 90)
 		character.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
@@ -151,8 +153,8 @@ func _process(delta: float) -> void:
 		idle_time = 0.0
 		
 		if (character.is_on_floor()): add_bob()
-			
 		view_model_bob()
+		
 		if (enable_bob and character.is_on_floor()): 
 			view_bob_classic()
 			

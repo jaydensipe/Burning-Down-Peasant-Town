@@ -1,5 +1,5 @@
 extends Node3D
-class_name SpawnerComponent
+class_name SpawnerComponent3D
 
 @export var scene: PackedScene
 @export_group("Spawn Config")
@@ -15,7 +15,7 @@ var _can_spawn: bool = true
 @export var randomize_z: bool = false
 
 # Logic used from https://github.com/uheartbeast/Galaxy-Defiance. Thank you!
-func spawn_at_location(global_spawn_position: Vector3 = global_position, parent: Node = get_tree().current_scene) -> Node:
+func spawn_at_location(global_spawn_position: Vector3 = global_position, normal:Vector3 = global_position, parent: Node = get_tree().current_scene) -> Node:
 	assert(scene is PackedScene, "Error: The scene export was never set on this spawner component.")
 	if !(_can_spawn): return
 	

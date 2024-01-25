@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://ifnos8v55kf1" path="res://addons/kenney_particle_pack/scorch_03.png" id="1_fdk4y"]
 
 [node name="BurnDecal" type="Decal"]
+layers = 2
 size = Vector3(3, 3, 3)
 texture_albedo = ExtResource("1_fdk4y")
 modulate = Color(0, 0, 0, 1)
-cull_mask = 1048571
+cull_mask = 1048561

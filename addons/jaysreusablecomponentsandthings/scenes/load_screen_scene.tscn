@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://54mlahj1p1ey"]
+[gd_scene load_steps=18 format=3 uid="uid://54mlahj1p1ey"]
 
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/scenes/load_screen_scene.gd" id="1_otrv4"]
-[ext_resource type="Texture2D" uid="uid://c8kblejm0yf32" path="res://ui/test-sprite.png" id="2_18my2"]
+[ext_resource type="Texture2D" uid="uid://c8kblejm0yf32" path="res://ui/assets/test-sprite.png" id="2_18my2"]
+[ext_resource type="Texture2D" uid="uid://dshdgqnv8tr82" path="res://ui/assets/loading_screen_1.png" id="3_jqcik"]
+[ext_resource type="Texture2D" uid="uid://cdn7coqujynai" path="res://ui/assets/loading_screen_2.png" id="3_qrpgp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odkrm"]
 atlas = ExtResource("2_18my2")
@@ -103,7 +105,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_otrv4")
-tooltips = Array[String](["Peasants can be knocked up with your fire bolt attack.", "YOUR GOAL: Turn the Village into a smoldering, fiery mess."])
+loading_screens = Array[CompressedTexture2D]([ExtResource("3_jqcik"), ExtResource("3_qrpgp")])
+tooltips = Array[String](["Peasants can be knocked up with your firebolt attack.", "YOUR GOAL: Turn the Village into a smoldering, fiery mess.", "Guards are greatly resistant to knock-ups!", "Feeling slow? Use your firebolt to rocket jump!", "If peasants spawn on top of each other, congratulations, you encountered a rare \"peasant stack!\" ;)"])
+
+[node name="LoadingScreen" type="Node2D" parent="."]
+position = Vector2(960, 540)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -203,4 +209,3 @@ position = Vector2(97.9351, 11.86)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_2q7v8")
 autoplay = "default"
-frame_progress = 0.204178

@@ -7,8 +7,7 @@ class_name Enemy
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 
 func _ready() -> void:
-	#spawner_component.spawn_at_location(global_position)
-	
 	health_component.death.connect(func():
 		burnable_component.burning = true
 	)
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://jtjq0bv3fa0d"]
+[gd_scene load_steps=17 format=3 uid="uid://jtjq0bv3fa0d"]
 
 [ext_resource type="Texture2D" uid="uid://bx6jbgqjjiedn" path="res://assets/props/house/textures/house1_material_basecolor.png" id="1_pydff"]
 [ext_resource type="Script" path="res://scenes/burnables/burnable_entity.gd" id="1_ssxi1"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bndbamckeuels" path="res://assets/props/house/textures/house1_material_roughness.png" id="4_w35ru"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/burnable-component.gd" id="6_uonnx"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/health-component.gd" id="8_2ysiu"]
+[ext_resource type="CompressedTexture3D" uid="uid://cxmb6h5jn1b1t" path="res://scenes/burnables/props/burnable_house.GPUParticlesCollisionSDF3D_data.exr" id="8_8cvp2"]
+[ext_resource type="Texture2D" uid="uid://t8hv1etrak7h" path="res://ui/assets/circle.png" id="9_i3gyh"]
+[ext_resource type="Texture2D" uid="uid://bf4vu341n2feb" path="res://ui/assets/fire_white.png" id="10_pps7s"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xpugi"]
 points = PackedVector3Array(-1.83963, 3.4408, 0.0250014, -1.68584, 3.43243, 0.762553, -1.8388, 3.45374, 0.0250014, -1.69963, 3.44232, -0.715954, -1.70047, 3.42862, -0.715954, -1.18059, -1.36294, -1.09192, -1.18059, -1.36294, 1.09161, -1.26166, 3.40427, 1.38512, -1.26083, 3.41721, 1.38512, -1.67915, 3.5268, 0.762553, -1.83336, 3.53517, 0.0246232, -1.69295, 3.53898, -0.716332, -1.28841, 3.41112, -1.34684, -1.28924, 3.39818, -1.34684, -1.09199, -1.36294, -1.18042, -0.421661, -1.36827, -1.25834, -0.421661, -1.36827, -0.41526, -1.09199, -1.36294, 1.18012, -0.632288, 3.36089, 1.79777, -0.631452, 3.37459, 1.79777, -1.25498, 3.49864, 1.38512, -1.6779, 3.54202, 0.762174, -1.83211, 3.55115, 0.0246232, -1.2813, 3.50777, -1.34722, -1.28256, 3.49255, -1.34722, 0.305922, 6.40661, -0.00374413, -0.667392, 3.36622, -1.77198, -0.668228, 3.35328, -1.7716, 0.0677127, 3.30077, -1.92629, 0.421265, -1.36827, -1.25834, 0.421265, -1.36827, -0.41526, 1.09159, -1.36294, 1.18012, 0.106578, 3.3099, 1.93772, 0.114519, 3.41949, 1.93734, -0.624348, 3.47124, 1.79739, -1.25372, 3.51386, 1.38474, -0.660706, 3.46287, -1.77198, 2.21619, 5.63719, 1.21643, 2.40258, 5.66078, 0.638115, 0.814519, 3.35861, -1.78673, 0.075235, 3.41036, -1.92629, 0.0685484, 3.31371, -1.92629, 0.0743992, 3.39514, -1.92629, 0.813266, 3.34339, -1.78673, 0.806579, 3.24902, -1.78635, 1.09159, -1.36294, -1.18042, 1.17977, -1.36294, -1.09192, 1.17977, -1.36294, 1.09161, 2.25422, 5.40583, 1.20811, 0.842519, 3.25739, 1.78302, 0.843773, 3.27033, 1.78302, 0.849206, 3.35176, 1.78302, 0.85046, 3.36698, 1.78264, 2.26718, 5.40811, 1.16537, 2.40676, 5.62654, 0.636223, 1.86807, 3.28783, -0.751508, 1.44389, 3.31599, -1.37408, 1.43679, 3.21934, -1.37408, 1.43595, 3.20564, -1.3737, 1.86013, 3.17748, -0.75113, 2.01434, 3.16911, -0.0135782, 2.42974, 5.43551, 0.626011, 1.86097, 3.19118, -0.751508)
@@ -52,7 +55,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0bilp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qs0qs"]
-resource_local_to_scene = true
 albedo_texture = ExtResource("1_pydff")
 roughness_texture = ExtResource("4_w35ru")
 normal_enabled = true
@@ -60,7 +62,12 @@ normal_texture = ExtResource("3_df83s")
 ao_enabled = true
 ao_texture = ExtResource("2_rhmnw")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_wixy1"]
+viewport_path = NodePath("SubViewport")
+
 [node name="BurnableHouse" type="StaticBody3D" node_paths=PackedStringArray("health_component", "burnable_component") groups=["burn_objective", "burnable"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_ssxi1")
 health_component = NodePath("HealthComponent")
 burnable_component = NodePath("BurnableComponent")
@@ -81,12 +88,6 @@ burn_hue = Color(0.223529, 0.223529, 0.223529, 1)
 [node name="Timer" type="Timer" parent="BurnableComponent"]
 wait_time = 0.5
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
-billboard = 2
-text = "TIME LEFT"
-font_size = 96
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_xpugi")
 
@@ -94,3 +95,32 @@ shape = SubResource("ConvexPolygonShape3D_xpugi")
 mesh = SubResource("ArrayMesh_pn4kw")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qs0qs")
+
+[node name="GPUParticlesCollisionSDF3D" type="GPUParticlesCollisionSDF3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+layers = 5
+size = Vector3(4, 9, 4)
+texture = ExtResource("8_8cvp2")
+
+[node name="CircleSprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 9, 0)
+visible = false
+billboard = 1
+texture = SubResource("ViewportTexture_wixy1")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="SubViewport"]
+offset_right = 512.0
+offset_bottom = 512.0
+step = 0.001
+fill_mode = 4
+texture_under = ExtResource("9_i3gyh")
+texture_progress = ExtResource("9_i3gyh")
+tint_progress = Color(1, 0.701961, 0.337255, 1)
+
+[node name="FireSprite2D" type="Sprite2D" parent="SubViewport/TextureProgressBar"]
+position = Vector2(256, 256)
+texture = ExtResource("10_pps7s")

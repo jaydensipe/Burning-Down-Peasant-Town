@@ -1,6 +1,7 @@
-[gd_scene load_steps=131 format=3 uid="uid://dlh45q20mvohv"]
+[gd_scene load_steps=132 format=3 uid="uid://dlh45q20mvohv"]
 
 [ext_resource type="Texture2D" uid="uid://bjljmcolga5at" path="res://addons/jaysreusablecomponentsandthings/assets/fire/fire_loop.png" id="1_0qog5"]
+[ext_resource type="AudioStream" uid="uid://c0ogcvhul2q56" path="res://sounds/fire_burn_loop.mp3" id="2_g3s1a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bct6f"]
 atlas = ExtResource("1_0qog5")
@@ -911,3 +912,7 @@ layers = 4
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_eop24")
 autoplay = "default"
+
+[node name="FireAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_g3s1a")
+autoplay = true
