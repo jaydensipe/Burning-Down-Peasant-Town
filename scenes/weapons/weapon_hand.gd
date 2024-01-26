@@ -41,7 +41,8 @@ func _on_primary_state_exited() -> void:
 	omni_light_3d.hide()
 	
 	var wielder: Player = (get_parent() as WeaponContainerComponent3D).wielder as Player
-	get_tree().create_tween().tween_property(wielder.character_movement_3d.move_stats, "speed", wielder.character_movement_3d.move_stats.speed + 1.5, 0.5)
+#	# temporary locked at 4.0
+	get_tree().create_tween().tween_property(wielder.character_movement_3d.move_stats, "speed", clampf(wielder.character_movement_3d.move_stats.speed + 1.5, 2.5, 4.0), 0.5)
 	
 func _on_primary_state_physics_processing(delta: float) -> void:
 	if (ray_cast_3d.is_colliding()):
