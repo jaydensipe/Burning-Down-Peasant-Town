@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1v3hmm504ie7"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/fire_projectile.gd" id="1_gfcdx"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/projectile-component-3d.gd" id="1_tavj7"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/spawner-component-3d.gd" id="3_pf22g"]
+[ext_resource type="PackedScene" uid="uid://ctpif1hi2skhi" path="res://scenes/entities/explosion.tscn" id="4_biflb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2sr1"]
+albedo_color = Color(1, 0.603922, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vsf50"]
+material = SubResource("StandardMaterial3D_p2sr1")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b1xff"]
+
+[node name="FireProjectile" type="Area3D"]
+script = ExtResource("1_gfcdx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0)
+mesh = SubResource("SphereMesh_vsf50")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.3, -2.77687e-30, 1.21381e-37, 0, -1.31134e-08, -0.3, 2.77687e-30, 0.3, -1.31134e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_b1xff")
+
+[node name="ProjectileComponent3D" type="Node3D" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("1_tavj7")
+actor = NodePath("..")
+speed = 20.0
+
+[node name="SpawnerComponent" type="Node3D" parent="."]
+script = ExtResource("3_pf22g")
+scene = ExtResource("4_biflb")
+delete_timer = true
+delete_time = 0.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

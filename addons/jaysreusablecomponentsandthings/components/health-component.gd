@@ -1,7 +1,7 @@
 extends Node
 class_name HealthComponent
 
-enum HEAL_TYPES {
+enum HEALTH_TYPES {
 	DAMAGE,
 	HEALTH,
 }
@@ -16,20 +16,18 @@ var is_dead = false
 		
 		if (_health <= 0.0): 
 			death.emit()
+			is_dead = true
 
 func _ready() -> void:
 	max_health = _health
 	
-func is_dead_check() -> bool:
-	return is_dead
-	
-func apply_health(health_offset: float, type: HEAL_TYPES):
+func apply_health(health_offset: float, type: HEALTH_TYPES):
 	match type:
-		HEAL_TYPES.DAMAGE:
+		HEALTH_TYPES.DAMAGE:
 			if (_health <= 0.0): return
 			
 			_health -= absi(health_offset)
-		HEAL_TYPES.HEALTH:
+		HEALTH_TYPES.HEALTH:
 			_health += absi(health_offset)
 			if (_health == max_health):
 				healed_to_full.emit()

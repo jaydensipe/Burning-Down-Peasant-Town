@@ -1,0 +1,83 @@
+[gd_scene load_steps=16 format=3 uid="uid://cws2osv1anr8f"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_2bcsv"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/move_stats.gd" id="2_4nqdj"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/health-component.gd" id="2_q55bc"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/fps-camera-component-3d.gd" id="3_5e0qq"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/character-movement-3d.gd" id="3_skxvm"]
+[ext_resource type="PackedScene" uid="uid://d31cnnk2lwhc7" path="res://assets/particles/player_spawn.tscn" id="4_dueu7"]
+[ext_resource type="PackedScene" uid="uid://dxbyemql1gkol" path="res://scenes/weapons/weapon_hand.tscn" id="4_rqlk5"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/weapon-manager-component.gd" id="5_3aw06"]
+[ext_resource type="AudioStream" uid="uid://dcd6srjr5wjag" path="res://sounds/grass_step_1.mp3" id="9_dgkkd"]
+[ext_resource type="AudioStream" uid="uid://csobfwxwm1g4l" path="res://sounds/grass_step_2.mp3" id="10_8fmu1"]
+[ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/spawner-component-3d.gd" id="10_l2k3l"]
+
+[sub_resource type="Resource" id="Resource_w6o5x"]
+script = ExtResource("2_4nqdj")
+speed = 4.0
+jump_height = 3.5
+acceleration = 20.0
+air_acceleration = 2.0
+apply_acceleration = true
+apply_air_acceleration = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uo7vp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d6wjp"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p3g6s"]
+streams_count = 2
+stream_0/stream = ExtResource("9_dgkkd")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("10_8fmu1")
+stream_1/weight = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 3
+script = ExtResource("1_2bcsv")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2_q55bc")
+max_health = 100.0
+_health = 100.0
+
+[node name="CharacterMovement3D" type="Node3D" parent="." node_paths=PackedStringArray("character")]
+script = ExtResource("3_skxvm")
+character = NodePath("..")
+move_stats = SubResource("Resource_w6o5x")
+
+[node name="SpawnEffectSpawnerComponent3D" type="Node3D" parent="."]
+script = ExtResource("10_l2k3l")
+scene = ExtResource("4_dueu7")
+delete_timer = true
+delete_time = 1.0
+
+[node name="FPSCameraComponent3D" type="Camera3D" parent="." node_paths=PackedStringArray("character", "viewmodel_container")]
+script = ExtResource("3_5e0qq")
+character = NodePath("..")
+viewmodel_container = NodePath("WeaponContainerComponent")
+mouse_sensitivity = 0.15
+viewmodel_origin = Vector3(-0.035, -0.325, -0.25)
+bob_amount = 0.02
+enable_idle = false
+roll_amount = 30.0
+
+[node name="WeaponContainerComponent" type="Node3D" parent="FPSCameraComponent3D" node_paths=PackedStringArray("wielder", "starting_weapon")]
+script = ExtResource("5_3aw06")
+wielder = NodePath("../..")
+starting_weapon = NodePath("WeaponHand")
+
+[node name="WeaponHand" parent="FPSCameraComponent3D/WeaponContainerComponent" instance=ExtResource("4_rqlk5")]
+weapon_description = "Shoot fire"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_uo7vp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_d6wjp")
+
+[node name="AudioFootStep" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_p3g6s")

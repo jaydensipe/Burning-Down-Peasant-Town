@@ -1,26 +1,36 @@
 extends Node3D
-class_name BurnableProp
+class_name BurnableObjective
 
 var being_serviced: bool = false
 @export var health_component: HealthComponent
 @export var burnable_component: BurnableComponent
-@onready var label_3d: Label3D = $Label3D
-@onready var house: MeshInstance3D = $House
+@onready var texture_progress_bar: TextureProgressBar = $SubViewport/TextureProgressBar
+@onready var circle_sprite_3d: Sprite3D = $CircleSprite3D
+@onready var rubble_spawner_component_3d: SpawnerComponent3D = $RubbleSpawnerComponent3D
+
 func _physics_process(delta: float) -> void:
-	label_3d.text = str(burnable_component.burn_timer.wait_time) if burnable_component.burn_timer.is_stopped() else str(burnable_component.burn_timer.time_left)
+	texture_progress_bar.value = burnable_component.burn_timer.wait_time - burnable_component.burn_timer.time_left
 	
 func _ready() -> void:
+	texture_progress_bar.max_value = burnable_component.burn_timer.wait_time
+	
 	health_component.death.connect(func():
 		burnable_component.burning = true
 		add_to_group("burning")
 	)
 	
-	burnable_component.finished_burn.connect(func():
-		GlobalEventBus.signal_objective_burned_down(self)
-	)
-	
 	health_component.healed_to_full.connect(func():
+		circle_sprite_3d.hide()
 		burnable_component.burning = false
 		remove_from_group("burning")
+	)
+	
+	burnable_component.started_burn.connect(func():
+		circle_sprite_3d.show()
+	)
+	
+	burnable_component.finished_burn.connect(func():
+		rubble_spawner_component_3d.spawn_at_location(global_position, (get_tree().current_scene as Main).level_manager.get_child(0))
+		GlobalEventBus.signal_objective_burned_down(self)
 	)
 

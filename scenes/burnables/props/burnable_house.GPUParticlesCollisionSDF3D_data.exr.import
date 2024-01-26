@@ -1,0 +1,26 @@
+[remap]
+
+importer="3d_texture"
+type="CompressedTexture3D"
+uid="uid://cxmb6h5jn1b1t"
+path="res://.godot/imported/burnable_house.GPUParticlesCollisionSDF3D_data.exr-137a30b3aeae3b97396918e56f27149f.ctex3d"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://scenes/burnables/props/burnable_house.GPUParticlesCollisionSDF3D_data.exr"
+dest_files=["res://.godot/imported/burnable_house.GPUParticlesCollisionSDF3D_data.exr-137a30b3aeae3b97396918e56f27149f.ctex3d"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=28

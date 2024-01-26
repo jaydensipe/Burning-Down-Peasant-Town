@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 class_name CharacterMovement3D
 
 @export var character: CharacterBody3D

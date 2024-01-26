@@ -67,15 +67,19 @@ const kick_amount: float = 0.6
 var idle_time: float = 0.0
 var mouse_move: Vector2 = Vector2.ZERO
 var mouse_rotation_x: float = 0.0
-var y_offset: float = 1.25          
+var y_offset: float = 1.25         
+
+signal footstep 
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.use_accumulated_input = false
 	swayPos = viewmodel_origin
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		mouse_move = event.relative * 0.1
+		# this changes view bob amount, make sure to expose
+		mouse_move = event.relative * 0.50 
 		mouse_rotation_x -= event.relative.y * mouse_sensitivity
 		mouse_rotation_x = clamp(mouse_rotation_x, -90, 90)
 		character.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
@@ -92,7 +96,6 @@ var cl_bobcycle : float = 0.8         # default: 0.8
 func calc_bob (freqmod: float, mode, bob_i: int, bob: float):
 	var cycle : float
 	var vel : Vector3
-	
 	
 	_bob_times[bob_i] += deltaTime * freqmod
 	cycle = _bob_times[bob_i] - int( _bob_times[bob_i] / cl_bobcycle ) * cl_bobcycle
@@ -121,6 +124,11 @@ func calc_bob (freqmod: float, mode, bob_i: int, bob: float):
 func _process(delta: float) -> void:
 	deltaTime = delta
 	
+	if (character.health_component.is_dead):
+		rotation_degrees.z = 80
+		transform.origin = Vector3(0, 0.75, 0)
+		return
+	
 	# Set points of origin
 	rotation_degrees = Vector3(mouse_rotation_x, 0, 0)
 	transform.origin = Vector3(0, y_offset, 0)
@@ -143,10 +151,11 @@ func _process(delta: float) -> void:
 		view_model_idle()
 	else:
 		idle_time = 0.0
-		add_bob()
+		
+		if (character.is_on_floor()): add_bob()
 		view_model_bob()
 		
-		if (enable_bob): 
+		if (enable_bob and character.is_on_floor()): 
 			view_bob_classic()
 			
 
@@ -244,6 +253,7 @@ func calc_bob_classic():
 	cycle /= bob_cycle
 	if cycle < bob_up:
 		cycle = PI * cycle / bob_up
+		footstep.emit()		
 	else:
 		cycle = PI + PI * (cycle - bob_up) / (1.0 - bob_up)
 	

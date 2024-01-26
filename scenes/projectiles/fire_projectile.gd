@@ -1,5 +1,5 @@
 extends Area3D
-@onready var spawner_component: SpawnerComponent = $SpawnerComponent
+@onready var spawner_component: SpawnerComponent3D = $SpawnerComponent
 
 func _on_body_entered(body: Node3D) -> void:
 	if (body is Player): return
