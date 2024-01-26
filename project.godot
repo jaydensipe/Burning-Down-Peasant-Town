@@ -21,7 +21,8 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://ui/assets/helix.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://ui/assets/logo.png"
+config/windows_native_icon="res://ui/assets/icon.ico"
 
 [autoload]
 

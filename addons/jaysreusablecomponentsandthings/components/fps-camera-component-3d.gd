@@ -79,7 +79,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		# this changes view bob amount, make sure to expose
-		mouse_move = event.relative * 0.75 
+		mouse_move = event.relative * 0.50 
 		mouse_rotation_x -= event.relative.y * mouse_sensitivity
 		mouse_rotation_x = clamp(mouse_rotation_x, -90, 90)
 		character.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))

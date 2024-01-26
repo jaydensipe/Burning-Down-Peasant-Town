@@ -10,4 +10,4 @@ func _ready() -> void:
 	health_component.death.connect(func():
 		burnable_component.burning = true
 	)
-
+	

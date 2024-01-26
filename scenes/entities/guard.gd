@@ -16,7 +16,7 @@ func _on_pursue_state_physics_processing(delta: float) -> void:
 	navigation_agent_3d.target_position = GlobalGameInformation.player_pos
 	
 	if (character_movement_3d.character.is_on_floor()):
-		look_at(GlobalGameInformation.player_pos, Vector3.UP)
+		look_at(GlobalGameInformation.player_pos)
 		rotation.x = 0
 		rotation.z = 0
 		

@@ -46,6 +46,7 @@ func _default_burn_vfx_3d(disable: bool = false) -> void:
 	else:
 		get_tree().create_tween().tween_property(material, "albedo_color", burn_hue, initial_discolor_time)
 		fire.scale = (mesh.global_transform * mesh.mesh.get_aabb()).size * 0.6
+		
 		actor.add_child(fire)
 	
 func _default_burn_vfx_2d() -> void:

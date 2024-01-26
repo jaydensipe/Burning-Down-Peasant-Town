@@ -45,7 +45,7 @@ func _on_primary_state_exited() -> void:
 	
 func _on_primary_state_physics_processing(delta: float) -> void:
 	if (ray_cast_3d.is_colliding()):
-		decal_spawner_component.spawn_at_location(ray_cast_3d.get_collision_point(), ray_cast_3d.get_collision_normal())
+		decal_spawner_component.spawn_at_location(ray_cast_3d.get_collision_point())
 		
 	if (!audio_fire_loop.playing):
 		omni_light_3d.show()

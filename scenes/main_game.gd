@@ -1,4 +1,5 @@
 extends Node
+class_name Main
 
 @onready var level_manager: LevelManager = $LevelManager
 @onready var main_menu: MainMenu = $MainMenu
