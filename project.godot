@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Burning Down Peasant Town"
-config/description="A game about lighting shit on fire. Made for 2024 Pirate Dev Game Jam! :)"
+config/description="A game about lighting shit on fire. Made for 2024 Pirate Software Game Jam! :)"
 config/version="1.0"
 config/tags=PackedStringArray("game_jam")
 run/main_scene="res://scenes/main_game.tscn"

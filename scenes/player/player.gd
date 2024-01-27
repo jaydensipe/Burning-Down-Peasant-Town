@@ -27,6 +27,7 @@ func _ready() -> void:
 	GlobalEventBus.victory_achieved.connect(func():
 		victory_achieved = true
 		
+		health_component.invincible = true
 		weapon_container_component.current_weapon.hide()
 		weapon_container_component.current_weapon.can_attack = false
 	)

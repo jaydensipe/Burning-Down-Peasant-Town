@@ -7,6 +7,7 @@ var countdown: bool = true
 @onready var timer_label: RichTextLabel = $MapUI/TimerLabel
 @onready var houses_remaining_label: RichTextLabel = $MapUI/HousesRemainingLabel
 @onready var map_ui: Control = $MapUI
+@onready var spawn_manager_component: SpawnManagerComponent = $SpawnManagerComponent
 
 func _ready() -> void:
 	GlobalEventBus.objective_burned_down.connect(func(objective):
@@ -15,6 +16,7 @@ func _ready() -> void:
 	
 	GlobalEventBus.victory_achieved.connect(func():
 		map_ui.hide()
+		spawn_manager_component.spawning = false
 	)
 
 func _process(delta: float) -> void:

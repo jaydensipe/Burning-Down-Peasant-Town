@@ -36,7 +36,7 @@ func spawn_at_location(global_spawn_position: Vector3 = global_position, parent:
 		get_tree().create_timer(spawn_delay_time).timeout.connect(func(): _can_spawn = true)
 	
 	if (delete_timer):
-		get_tree().create_timer(delete_time).timeout.connect(func(): instance.queue_free())
+		get_tree().create_timer(delete_time).timeout.connect(func(): instance.queue_free()) 
 	
 	return instance
 	

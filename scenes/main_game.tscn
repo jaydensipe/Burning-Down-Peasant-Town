@@ -14,7 +14,7 @@ script = ExtResource("3_ujovp")
 level_name = "map01"
 level = ExtResource("5_wt6j2")
 
-[sub_resource type="Resource" id="Resource_ocdix"]
+[sub_resource type="Resource" id="Resource_xxjox"]
 script = ExtResource("3_ujovp")
 level_name = "map02"
 level = ExtResource("1_73m3j")
@@ -31,7 +31,7 @@ offset_right = 1920.0
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("5_mnhlh")
-levels = Array[ExtResource("3_ujovp")]([SubResource("Resource_macek"), SubResource("Resource_ocdix")])
+levels = Array[ExtResource("3_ujovp")]([SubResource("Resource_macek"), SubResource("Resource_xxjox")])
 
 [node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_p3ho0")

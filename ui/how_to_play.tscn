@@ -54,17 +54,19 @@ texture = ExtResource("1_hgl2g")
 
 [node name="HowToPlayLogo" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_eocry")
-position = Vector2(960, 285.115)
+position = Vector2(960, 153)
 texture = ExtResource("3_jm5et")
 
 [node name="HowToPlayHouse" type="Sprite2D" parent="."]
-position = Vector2(257.75, 703.5)
-scale = Vector2(0.302619, 0.301873)
+visible = false
+position = Vector2(325, 955)
+scale = Vector2(0.128859, 0.128541)
 texture = ExtResource("4_tghqg")
 
 [node name="HowToPlayHouse2" type="Sprite2D" parent="."]
-position = Vector2(1664, 703.5)
-scale = Vector2(0.409608, 0.402111)
+visible = false
+position = Vector2(1583, 914)
+scale = Vector2(0.209229, 0.205399)
 texture = ExtResource("5_i5ia5")
 
 [node name="BackButton" type="Button" parent="."]
@@ -83,94 +85,127 @@ text = "BACK"
 flat = true
 
 [node name="MovementSettings" type="Node2D" parent="."]
-position = Vector2(737, 729)
+position = Vector2(750, 335)
 
 [node name="MovementLabel" type="Label" parent="MovementSettings"]
 offset_left = 157.0
-offset_top = -205.0
+offset_top = 88.0
 offset_right = 322.0
-offset_bottom = -152.0
+offset_bottom = 141.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Movement"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FireboltLabel" type="Label" parent="MovementSettings"]
-offset_left = 122.0
-offset_right = 287.0
-offset_bottom = 53.0
+offset_left = -10.0
+offset_top = -66.0
+offset_right = 155.0
+offset_bottom = -13.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Firebolt"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AttackLabel" type="Label" parent="MovementSettings"]
-offset_right = 165.0
-offset_bottom = 53.0
+offset_left = -148.0
+offset_top = 91.0
+offset_right = 58.0
+offset_bottom = 144.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Attack"
+text = "Flames (Hold)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="JumpLabel" type="Label" parent="MovementSettings"]
-offset_left = 291.0
-offset_top = 21.0
-offset_right = 456.0
-offset_bottom = 74.0
+offset_left = 347.0
+offset_top = 85.0
+offset_right = 512.0
+offset_bottom = 138.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Jump"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MouseLeft" type="Sprite2D" parent="MovementSettings"]
-position = Vector2(82, 94)
+position = Vector2(-50, 37)
 texture = ExtResource("9_5sm6v")
 
 [node name="MouseRight" type="Sprite2D" parent="MovementSettings"]
-position = Vector2(202, 94)
+position = Vector2(70, 37)
 texture = ExtResource("10_d1uh4")
 
 [node name="KeyboardSpace" type="Sprite2D" parent="MovementSettings"]
-position = Vector2(371, 99)
+position = Vector2(429, 54)
 texture = ExtResource("11_moy40")
 
 [node name="KeyboardW" type="Sprite2D" parent="MovementSettings"]
-position = Vector2(239, -134)
+position = Vector2(239, 2)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_asuqk")
 
 [node name="KeyboardA" type="Sprite2D" parent="MovementSettings"]
-position = Vector2(183, -78)
+position = Vector2(183, 58)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_mroui")
 
 [node name="KeyboardS" type="Sprite2D" parent="MovementSettings"]
-position = Vector2(239, -78)
+position = Vector2(239, 58)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_f1d44")
 
 [node name="KeyboardD" type="Sprite2D" parent="MovementSettings"]
-position = Vector2(295, -78)
+position = Vector2(295, 58)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_q6njd")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 448.0
-offset_top = 507.0
-offset_right = 667.0
-offset_bottom = 900.0
-theme_override_font_sizes/font_size = 32
-text = "Burn down all houses in the Village to win! Once a house begins burning, it must be defended from Peasants, as they will try to put it out."
+offset_left = 27.0
+offset_top = 560.0
+offset_right = 634.0
+offset_bottom = 860.0
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[center][u]Burn the houses![/u][/center]
+
+[center]Use your Flames (M1) by keeping it held on the house to light them ablaze. Once the houses are on fire, it must be defended from altrustic peasants, as they will try and put out the blaze you've created. Burn down all the houses in Peasant Town to achieve Imp victory!"
+fit_content = true
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label3" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 1253.0
-offset_top = 504.0
-offset_right = 1472.0
-offset_bottom = 897.0
-theme_override_font_sizes/font_size = 32
-text = "Beware of Guards! They will do their best to defend the 	Village. Blast them down with your firebolt, or use it as a quick escape mechanism."
-horizontal_alignment = 2
+offset_left = 661.0
+offset_top = 560.0
+offset_right = 1268.0
+offset_bottom = 860.0
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[center][u]Impish Artillery[/u][/center]
+
+[center]Your Firebolt (M2) is ineffective as a tool of destruction against houses, and they will not set them on fire.
+
+However, your Firebolt (M2) can be used to knock away any pesky peasants. It can also be used to propell yourself and evade enemies."
+fit_content = true
+autowrap_mode = 2
+
+[node name="Label4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1290.0
+offset_top = 560.0
+offset_right = 1897.0
+offset_bottom = 860.0
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[center][u]Beware of Guards![/u][/center]
+
+[center]Guards will do their best to defend the village from your wicked advances! Stay nimble, these fierce protectors will put an end to your reign in a single swipe of their mighty sword!"
+fit_content = true
 autowrap_mode = 2

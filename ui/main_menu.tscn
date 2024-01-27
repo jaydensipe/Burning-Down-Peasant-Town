@@ -51,7 +51,7 @@ position = Vector2(954, 262)
 texture = ExtResource("6_uang4")
 
 [node name="Gamejam" type="Sprite2D" parent="."]
-position = Vector2(1835, 999)
+position = Vector2(1835, 1001)
 scale = Vector2(0.297381, 0.297381)
 texture = ExtResource("7_wi1vs")
 
@@ -121,9 +121,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -701.0
-offset_top = -115.0
+offset_top = -107.0
 offset_right = -169.0
-offset_bottom = -36.0
+offset_bottom = -28.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
@@ -143,15 +143,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1871.0
 offset_top = -119.0
-offset_right = -816.0
+offset_right = -758.0
 offset_bottom = -31.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
 theme_override_font_sizes/normal_font_size = 38
 bbcode_enabled = true
-text = "Created by Jayden, Stegimus & Ross 
-Special Thanks: Helix Güd, Kenney, PirateSoftware, Btan2"
+text = "Created by Jayden & Stegimus
+Special Thanks: Helix Güd, Ross, Kenney, PirateSoftware, Btan2"
 fit_content = true
 
 [node name="AudioMainMenu" type="AudioStreamPlayer" parent="."]

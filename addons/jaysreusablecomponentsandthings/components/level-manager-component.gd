@@ -19,6 +19,9 @@ func load_level_by_index(index: int, delete_type: DELETE_TYPE = DELETE_TYPE.NONE
 func load_next_level(delete_type: DELETE_TYPE = DELETE_TYPE.QUEUE_FREE) -> void:
 	current_level_index += 1
 	
+	if (current_level_index >= levels.size()):
+		current_level_index -= 1
+	
 	_load_level(delete_type)
 	
 func _load_level(delete_type: DELETE_TYPE, index: int = current_level_index) -> void:
@@ -31,6 +34,7 @@ func _load_level(delete_type: DELETE_TYPE, index: int = current_level_index) -> 
 			pass
 		_:
 			printerr("Type not specified for LevelManagerComponent.")
+			
 		
 	var level: PackedScene = levels[index].level
 	SceneLoaderManager.load_packed_scene(level)

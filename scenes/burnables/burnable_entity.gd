@@ -8,6 +8,8 @@ var being_serviced: bool = false
 @onready var circle_sprite_3d: Sprite3D = $CircleSprite3D
 @onready var rubble_spawner_component_3d: SpawnerComponent3D = $RubbleSpawnerComponent3D
 @onready var collapse_audio_stream_player_3d: AudioStreamPlayer3D = $CollapseAudioStreamPlayer3D
+@onready var ignite_audio_stream_player_3d: AudioStreamPlayer3D = $IgniteAudioStreamPlayer3D
+@onready var extinguish_audio_stream_player_3d: AudioStreamPlayer3D = $ExtinguishAudioStreamPlayer3D
 
 func _physics_process(delta: float) -> void:
 	texture_progress_bar.value = burnable_component.burn_timer.wait_time - burnable_component.burn_timer.time_left
@@ -17,12 +19,16 @@ func _ready() -> void:
 	
 	health_component.death.connect(func():
 		burnable_component.burning = true
+		
+		ignite_audio_stream_player_3d.play()
 		add_to_group("burning")
 	)
 	
 	health_component.healed_to_full.connect(func():
 		circle_sprite_3d.hide()
 		burnable_component.burning = false
+		
+		extinguish_audio_stream_player_3d.play()
 		remove_from_group("burning")
 	)
 	

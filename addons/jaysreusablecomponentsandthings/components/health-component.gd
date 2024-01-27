@@ -5,7 +5,8 @@ enum HEALTH_TYPES {
 	DAMAGE,
 	HEALTH,
 }
-var is_dead = false
+var is_dead: bool = false
+var invincible: bool = false
 @export var max_health: float = 1.0
 @export var _health: float = 1.0:
 	set(value):
@@ -24,7 +25,7 @@ func _ready() -> void:
 func apply_health(health_offset: float, type: HEALTH_TYPES):
 	match type:
 		HEALTH_TYPES.DAMAGE:
-			if (_health <= 0.0): return
+			if (_health <= 0.0 or invincible): return
 			
 			_health -= absi(health_offset)
 		HEALTH_TYPES.HEALTH:

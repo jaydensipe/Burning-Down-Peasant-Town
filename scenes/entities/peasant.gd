@@ -9,6 +9,7 @@ var _current_burning_objective: BurnableObjective = null
 @onready var death_audio_stream_player_3d: AudioStreamPlayer3D = $DeathAudioStreamPlayer3D
 @onready var gossip_audio_stream_player_3d: AudioStreamPlayer3D = $GossipAudioStreamPlayer3D
 @onready var hurt_audio_stream_player_3d: AudioStreamPlayer3D = $HurtAudioStreamPlayer3D
+@onready var water_audio_stream_player_3d: AudioStreamPlayer3D = $WaterAudioStreamPlayer3D
 
 func _ready() -> void:
 	super()
@@ -118,6 +119,7 @@ func _on_watering_state_entered() -> void:
 			_current_burning_objective.being_serviced = true
 	
 	animation_player.animation_finished.connect(func(_animation_name): 
+		water_audio_stream_player_3d.play()
 		_current_burning_objective.health_component.apply_health(200.0, _current_burning_objective.health_component.HEALTH_TYPES.HEALTH)	
 	)
 
