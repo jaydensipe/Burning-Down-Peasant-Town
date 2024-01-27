@@ -1,11 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://cg4ypbhby0i7v"]
+[gd_scene load_steps=14 format=3 uid="uid://cg4ypbhby0i7v"]
 
 [ext_resource type="Texture2D" uid="uid://20twfse38ieu" path="res://ui/assets/how_to_play.png" id="1_hgl2g"]
 [ext_resource type="Script" path="res://ui/how_to_play.gd" id="2_8yhkn"]
 [ext_resource type="Texture2D" uid="uid://bh6kr77bfkv28" path="res://ui/assets/howtoplay_logo.png" id="3_jm5et"]
-[ext_resource type="Texture2D" uid="uid://durnbuyd0pmmh" path="res://ui/assets/how_to_play_house.png" id="4_tghqg"]
 [ext_resource type="Texture2D" uid="uid://cc6mndfq4d4sg" path="res://ui/assets/keyboard_w.png" id="5_asuqk"]
-[ext_resource type="Texture2D" uid="uid://21qs0rin280j" path="res://ui/assets/how_to_play_guard.png" id="5_i5ia5"]
 [ext_resource type="Texture2D" uid="uid://bjdrnoegr6v4r" path="res://ui/assets/keyboard_a.png" id="6_mroui"]
 [ext_resource type="Texture2D" uid="uid://cgqldcjsi54ut" path="res://ui/assets/keyboard_s.png" id="7_f1d44"]
 [ext_resource type="Texture2D" uid="uid://3v3ntecco1ra" path="res://ui/assets/keyboard_d.png" id="8_q6njd"]
@@ -56,18 +54,6 @@ texture = ExtResource("1_hgl2g")
 material = SubResource("ShaderMaterial_eocry")
 position = Vector2(960, 153)
 texture = ExtResource("3_jm5et")
-
-[node name="HowToPlayHouse" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(325, 955)
-scale = Vector2(0.128859, 0.128541)
-texture = ExtResource("4_tghqg")
-
-[node name="HowToPlayHouse2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1583, 914)
-scale = Vector2(0.209229, 0.205399)
-texture = ExtResource("5_i5ia5")
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0

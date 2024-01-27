@@ -502,8 +502,7 @@ omni_range = 4.0
 
 [node name="ExplosionAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hjvkp")
-volume_db = -5.0
-max_db = -1.0
 pitch_scale = 0.7
+bus = &"Explosion"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

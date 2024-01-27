@@ -25,9 +25,9 @@ func _ready() -> void:
 	)
 	
 	health_component.healed_to_full.connect(func():
-		circle_sprite_3d.hide()
 		burnable_component.burning = false
 		
+		circle_sprite_3d.hide()
 		extinguish_audio_stream_player_3d.play()
 		remove_from_group("burning")
 	)
@@ -38,6 +38,7 @@ func _ready() -> void:
 	
 	burnable_component.finished_burn.connect(func():
 		rubble_spawner_component_3d.spawn_at_location(global_position, (get_tree().current_scene as Main).level_manager.get_child(0))
+		
 		GlobalEventBus.signal_objective_burned_down(self)
 		AudioManager.play_audio_at_position_3d(collapse_audio_stream_player_3d, global_position)
 	)

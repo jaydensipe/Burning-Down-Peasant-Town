@@ -91,6 +91,7 @@ mesh = NodePath("../House")
 burn_hue = Color(0.223529, 0.223529, 0.223529, 1)
 
 [node name="Timer" type="Timer" parent="BurnableComponent"]
+wait_time = 15.0
 
 [node name="RubbleSpawnerComponent3D" type="Node3D" parent="."]
 script = ExtResource("4_yyon7")
