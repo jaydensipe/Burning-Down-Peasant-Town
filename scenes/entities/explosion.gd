@@ -18,7 +18,7 @@ func _on_body_entered(body: Node3D) -> void:
 			y_scale = 0.0
 			z_scale = 5.0
 			override_y = 7.0
-		if (body is Guard):
+		if (body is Knight):
 			x_scale = 1.0
 			y_scale = 0.0
 			z_scale = 1.0

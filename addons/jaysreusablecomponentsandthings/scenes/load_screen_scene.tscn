@@ -1,100 +1,317 @@
-[gd_scene load_steps=18 format=3 uid="uid://54mlahj1p1ey"]
+[gd_scene load_steps=82 format=3 uid="uid://54mlahj1p1ey"]
 
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/scenes/load_screen_scene.gd" id="1_otrv4"]
-[ext_resource type="Texture2D" uid="uid://c8kblejm0yf32" path="res://ui/assets/test-sprite.png" id="2_18my2"]
 [ext_resource type="Texture2D" uid="uid://dshdgqnv8tr82" path="res://ui/assets/loading_screen_1.png" id="3_jqcik"]
 [ext_resource type="Texture2D" uid="uid://cdn7coqujynai" path="res://ui/assets/loading_screen_2.png" id="3_qrpgp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_odkrm"]
-atlas = ExtResource("2_18my2")
-region = Rect2(0, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wdmy2"]
-atlas = ExtResource("2_18my2")
-region = Rect2(100, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r4gli"]
-atlas = ExtResource("2_18my2")
-region = Rect2(200, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ec85j"]
-atlas = ExtResource("2_18my2")
-region = Rect2(300, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wxur8"]
-atlas = ExtResource("2_18my2")
-region = Rect2(400, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qjiba"]
-atlas = ExtResource("2_18my2")
-region = Rect2(500, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m8jxw"]
-atlas = ExtResource("2_18my2")
-region = Rect2(600, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_310ql"]
-atlas = ExtResource("2_18my2")
-region = Rect2(700, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_whkm3"]
-atlas = ExtResource("2_18my2")
-region = Rect2(800, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ijdc"]
-atlas = ExtResource("2_18my2")
-region = Rect2(900, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v468g"]
-atlas = ExtResource("2_18my2")
-region = Rect2(1000, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_63xvb"]
-atlas = ExtResource("2_18my2")
-region = Rect2(1100, 0, 100, 100)
+[ext_resource type="Texture2D" uid="uid://jf530jh421be" path="res://ui/assets/house_logos/House_00001.png" id="4_omnwi"]
+[ext_resource type="Texture2D" uid="uid://bkw23ypkf0mpu" path="res://ui/assets/loading_screen_3.png" id="4_tf7hx"]
+[ext_resource type="Texture2D" uid="uid://qhjspm03du55" path="res://ui/assets/house_logos/House_00002.png" id="5_1inrl"]
+[ext_resource type="Texture2D" uid="uid://caxjkdnghhd36" path="res://ui/assets/loading_screen_4.png" id="5_y2evs"]
+[ext_resource type="Texture2D" uid="uid://jyyqg0wtt45x" path="res://ui/assets/house_logos/House_00003.png" id="6_wjd5r"]
+[ext_resource type="Texture2D" uid="uid://bmmh1jpk4mnxm" path="res://ui/assets/house_logos/House_00004.png" id="7_s3oe8"]
+[ext_resource type="Texture2D" uid="uid://drpllo0jrpvo4" path="res://ui/assets/house_logos/House_00005.png" id="8_irfnr"]
+[ext_resource type="Texture2D" uid="uid://bfbrf0ylcfqub" path="res://ui/assets/house_logos/House_00006.png" id="9_g1ejk"]
+[ext_resource type="Texture2D" uid="uid://cp4bmx316m5cl" path="res://ui/assets/house_logos/House_00007.png" id="10_4i770"]
+[ext_resource type="Texture2D" uid="uid://dir1a327n26h3" path="res://ui/assets/house_logos/House_00008.png" id="11_r5omq"]
+[ext_resource type="Texture2D" uid="uid://cdq5b3ejke0ji" path="res://ui/assets/house_logos/House_00009.png" id="12_o3435"]
+[ext_resource type="Texture2D" uid="uid://cv1y1qvkncraj" path="res://ui/assets/house_logos/House_00010.png" id="13_6es2h"]
+[ext_resource type="Texture2D" uid="uid://b4c55gsh6ln6p" path="res://ui/assets/house_logos/House_00011.png" id="14_flmpb"]
+[ext_resource type="Texture2D" uid="uid://cymc5j4m5gh48" path="res://ui/assets/house_logos/House_00012.png" id="15_dbnyr"]
+[ext_resource type="Texture2D" uid="uid://cqk8xvepq3nqq" path="res://ui/assets/house_logos/House_00013.png" id="16_5mip8"]
+[ext_resource type="Texture2D" uid="uid://cj05fdt1kpeun" path="res://ui/assets/house_logos/House_00014.png" id="17_lo3vu"]
+[ext_resource type="Texture2D" uid="uid://dtff6v1d8bwvm" path="res://ui/assets/house_logos/House_00015.png" id="18_r77dv"]
+[ext_resource type="Texture2D" uid="uid://diy5p21m8gobd" path="res://ui/assets/house_logos/House_00016.png" id="19_8m45b"]
+[ext_resource type="Texture2D" uid="uid://6dlmqucyb6ll" path="res://ui/assets/house_logos/House_00017.png" id="20_w7uut"]
+[ext_resource type="Texture2D" uid="uid://dixsf7k46bqqr" path="res://ui/assets/house_logos/House_00018.png" id="21_ilfvp"]
+[ext_resource type="Texture2D" uid="uid://cp6f1psaog5oi" path="res://ui/assets/house_logos/House_00019.png" id="22_056yp"]
+[ext_resource type="Texture2D" uid="uid://cg6qedgsbcxxr" path="res://ui/assets/house_logos/House_00020.png" id="23_mhyau"]
+[ext_resource type="Texture2D" uid="uid://baio7782r2pxm" path="res://ui/assets/house_logos/House_00021.png" id="24_6nopp"]
+[ext_resource type="Texture2D" uid="uid://bd15kqjfasdgb" path="res://ui/assets/house_logos/House_00022.png" id="25_fwf1h"]
+[ext_resource type="Texture2D" uid="uid://dc0wis8r57w7g" path="res://ui/assets/house_logos/House_00023.png" id="26_25bma"]
+[ext_resource type="Texture2D" uid="uid://dj6tp75ssoq78" path="res://ui/assets/house_logos/House_00024.png" id="27_syd6k"]
+[ext_resource type="Texture2D" uid="uid://d2crvy25dcjcd" path="res://ui/assets/house_logos/House_00025.png" id="28_24c3a"]
+[ext_resource type="Texture2D" uid="uid://dufyka1ap4y55" path="res://ui/assets/house_logos/House_00026.png" id="29_va58c"]
+[ext_resource type="Texture2D" uid="uid://eoaqiaopoq4d" path="res://ui/assets/house_logos/House_00027.png" id="30_xkopw"]
+[ext_resource type="Texture2D" uid="uid://c3ufiuwndyllf" path="res://ui/assets/house_logos/House_00028.png" id="31_8ypwa"]
+[ext_resource type="Texture2D" uid="uid://ud4km1diqq4c" path="res://ui/assets/house_logos/House_00029.png" id="32_uqhiv"]
+[ext_resource type="Texture2D" uid="uid://8g22ql10xdlx" path="res://ui/assets/house_logos/House_00030.png" id="33_4te6d"]
+[ext_resource type="Texture2D" uid="uid://bcyiyraevc3s0" path="res://ui/assets/house_logos/House_00031.png" id="34_j70cc"]
+[ext_resource type="Texture2D" uid="uid://cbdgh1s28tio7" path="res://ui/assets/house_logos/House_00032.png" id="35_va53c"]
+[ext_resource type="Texture2D" uid="uid://cvp8lnc4bwcho" path="res://ui/assets/house_logos/House_00033.png" id="36_3bval"]
+[ext_resource type="Texture2D" uid="uid://ew8wi8pxrb4k" path="res://ui/assets/house_logos/House_00034.png" id="37_qrwah"]
+[ext_resource type="Texture2D" uid="uid://clctsy4wtduay" path="res://ui/assets/house_logos/House_00035.png" id="38_hmcm4"]
+[ext_resource type="Texture2D" uid="uid://b3j1dh3qv4mrd" path="res://ui/assets/house_logos/House_00036.png" id="39_w6rn2"]
+[ext_resource type="Texture2D" uid="uid://cc5nd0014jvh1" path="res://ui/assets/house_logos/House_00037.png" id="40_oen3o"]
+[ext_resource type="Texture2D" uid="uid://dc71nportd2us" path="res://ui/assets/house_logos/House_00038.png" id="41_auapc"]
+[ext_resource type="Texture2D" uid="uid://bx2ecq20lp3cd" path="res://ui/assets/house_logos/House_00039.png" id="42_uqd3e"]
+[ext_resource type="Texture2D" uid="uid://cpv0hyoavodva" path="res://ui/assets/house_logos/House_00040.png" id="43_8223d"]
+[ext_resource type="Texture2D" uid="uid://cwcfn3mhycde4" path="res://ui/assets/house_logos/House_00041.png" id="44_5xe5f"]
+[ext_resource type="Texture2D" uid="uid://ensvain3rwj0" path="res://ui/assets/house_logos/House_00042.png" id="45_3ipim"]
+[ext_resource type="Texture2D" uid="uid://eyiuvbwkeutp" path="res://ui/assets/house_logos/House_00043.png" id="46_yv8cd"]
+[ext_resource type="Texture2D" uid="uid://bs2j3e1w5yiy5" path="res://ui/assets/house_logos/House_00044.png" id="47_pcifn"]
+[ext_resource type="Texture2D" uid="uid://xl511yd2h8fq" path="res://ui/assets/house_logos/House_00045.png" id="48_imobh"]
+[ext_resource type="Texture2D" uid="uid://dxndnui6h00f6" path="res://ui/assets/house_logos/House_00046.png" id="49_speg1"]
+[ext_resource type="Texture2D" uid="uid://cub26tvssmap3" path="res://ui/assets/house_logos/House_00047.png" id="50_jqhjo"]
+[ext_resource type="Texture2D" uid="uid://k7t7waubm1be" path="res://ui/assets/house_logos/House_00048.png" id="51_o0s64"]
+[ext_resource type="Texture2D" uid="uid://ds66hvnmwpnkg" path="res://ui/assets/house_logos/House_00049.png" id="52_r0dy7"]
+[ext_resource type="Texture2D" uid="uid://bfpwm7pf0pxfh" path="res://ui/assets/house_logos/House_00050.png" id="53_kpc1w"]
+[ext_resource type="Texture2D" uid="uid://drslevv4l74ou" path="res://ui/assets/house_logos/House_00051.png" id="54_adehh"]
+[ext_resource type="Texture2D" uid="uid://nakdj3ikylsx" path="res://ui/assets/house_logos/House_00052.png" id="55_lt35p"]
+[ext_resource type="Texture2D" uid="uid://btscpoi6wivmj" path="res://ui/assets/house_logos/House_00053.png" id="56_jj81r"]
+[ext_resource type="Texture2D" uid="uid://bl7xbbf2phqrf" path="res://ui/assets/house_logos/House_00054.png" id="57_ydg02"]
+[ext_resource type="Texture2D" uid="uid://c80wml4li8m1m" path="res://ui/assets/house_logos/House_00055.png" id="58_aced4"]
+[ext_resource type="Texture2D" uid="uid://fbberne35ii7" path="res://ui/assets/house_logos/House_00056.png" id="59_8cvgx"]
+[ext_resource type="Texture2D" uid="uid://ceun600cxo1oo" path="res://ui/assets/house_logos/House_00057.png" id="60_gsn7g"]
+[ext_resource type="Texture2D" uid="uid://cgrf8my1f6j0f" path="res://ui/assets/house_logos/House_00058.png" id="61_u2a70"]
+[ext_resource type="Texture2D" uid="uid://cg0w46ut5hxyk" path="res://ui/assets/house_logos/House_00059.png" id="62_5oxhk"]
+[ext_resource type="Texture2D" uid="uid://cqxju4dccgkaw" path="res://ui/assets/house_logos/House_00060.png" id="63_xy5qk"]
+[ext_resource type="Texture2D" uid="uid://cv2dn41ali71u" path="res://ui/assets/house_logos/House_00061.png" id="64_yhu24"]
+[ext_resource type="Texture2D" uid="uid://cb1m3i16wfhto" path="res://ui/assets/house_logos/House_00062.png" id="65_c7fo1"]
+[ext_resource type="Texture2D" uid="uid://duo2klsnx8era" path="res://ui/assets/house_logos/House_00063.png" id="66_twfvg"]
+[ext_resource type="Texture2D" uid="uid://ckggumysso5jn" path="res://ui/assets/house_logos/House_00064.png" id="67_pgksh"]
+[ext_resource type="Texture2D" uid="uid://c3uf6v2mfxr31" path="res://ui/assets/house_logos/House_00065.png" id="68_xox0w"]
+[ext_resource type="Texture2D" uid="uid://cmlgym3y4heb0" path="res://ui/assets/house_logos/House_00066.png" id="69_37tbc"]
+[ext_resource type="Texture2D" uid="uid://bdlgtv51ye3s6" path="res://ui/assets/house_logos/House_00067.png" id="70_k6ty4"]
+[ext_resource type="Texture2D" uid="uid://02r0aoyox3g6" path="res://ui/assets/house_logos/House_00068.png" id="71_388fw"]
+[ext_resource type="Texture2D" uid="uid://b3nhmducuvux1" path="res://ui/assets/house_logos/House_00069.png" id="72_6te3u"]
+[ext_resource type="Texture2D" uid="uid://ks1tcbv4o71i" path="res://ui/assets/house_logos/House_00070.png" id="73_rppbf"]
+[ext_resource type="Texture2D" uid="uid://dq07bdr8f1dqw" path="res://ui/assets/house_logos/House_00071.png" id="74_8nq3y"]
+[ext_resource type="Texture2D" uid="uid://bey2pgjvhayif" path="res://ui/assets/house_logos/House_00072.png" id="75_3pa6m"]
+[ext_resource type="Texture2D" uid="uid://dhp0xs7lta2dm" path="res://ui/assets/house_logos/House_00073.png" id="76_k1uuj"]
+[ext_resource type="Texture2D" uid="uid://d4el8d3srjw8n" path="res://ui/assets/house_logos/House_00074.png" id="77_ai8k6"]
+[ext_resource type="Texture2D" uid="uid://dy72l5alpdor7" path="res://ui/assets/house_logos/House_00075.png" id="78_lbq68"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2q7v8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_odkrm")
+"texture": ExtResource("4_omnwi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wdmy2")
+"texture": ExtResource("5_1inrl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r4gli")
+"texture": ExtResource("6_wjd5r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ec85j")
+"texture": ExtResource("7_s3oe8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wxur8")
+"texture": ExtResource("8_irfnr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qjiba")
+"texture": ExtResource("9_g1ejk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m8jxw")
+"texture": ExtResource("10_4i770")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_310ql")
+"texture": ExtResource("11_r5omq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_whkm3")
+"texture": ExtResource("12_o3435")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2ijdc")
+"texture": ExtResource("13_6es2h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v468g")
+"texture": ExtResource("14_flmpb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_63xvb")
+"texture": ExtResource("15_dbnyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5mip8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lo3vu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_r77dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8m45b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_w7uut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ilfvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_056yp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mhyau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6nopp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_fwf1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_25bma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_syd6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_24c3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_va58c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_xkopw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8ypwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_uqhiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4te6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_j70cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_va53c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3bval")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_qrwah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_hmcm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_w6rn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_oen3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_auapc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_uqd3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_8223d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_5xe5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_3ipim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_yv8cd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_pcifn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_imobh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_speg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_jqhjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_o0s64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_r0dy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_kpc1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_adehh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_lt35p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_jj81r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ydg02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_aced4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_8cvgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_gsn7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_u2a70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_5oxhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_xy5qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_yhu24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_c7fo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_twfvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_pgksh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_xox0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_37tbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_k6ty4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_388fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_6te3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_rppbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_8nq3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_3pa6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_k1uuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_ai8k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_lbq68")
 }],
 "loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 60.0
 }]
 
 [node name="LoadScreenScene" type="Control"]
@@ -105,7 +322,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_otrv4")
-loading_screens = Array[CompressedTexture2D]([ExtResource("3_jqcik"), ExtResource("3_qrpgp")])
+loading_screens = Array[CompressedTexture2D]([ExtResource("3_jqcik"), ExtResource("3_qrpgp"), ExtResource("4_tf7hx"), ExtResource("5_y2evs")])
 tooltips = Array[String](["Peasants can be knocked up with your firebolt attack.", "YOUR GOAL: Turn the Village into a smoldering, fiery mess.", "Guards are greatly resistant to knock-ups!", "Feeling slow? Use your firebolt to rocket jump!", "If peasants spawn on top of each other, congratulations, you encountered a rare \"peasant stack!\" ;)"])
 
 [node name="LoadingScreen" type="Node2D" parent="."]
@@ -183,6 +400,7 @@ offset_right = 105.5
 offset_bottom = 11.5001
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
 text = "Press any key to continue..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -205,7 +423,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LoadingLabel"]
-position = Vector2(97.9351, 11.86)
-scale = Vector2(0.4, 0.4)
+position = Vector2(96.8, 7.86003)
+scale = Vector2(0.178446, 0.178446)
 sprite_frames = SubResource("SpriteFrames_2q7v8")
 autoplay = "default"

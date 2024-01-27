@@ -151,7 +151,7 @@ size_flags_horizontal = 8
 theme_override_font_sizes/normal_font_size = 38
 bbcode_enabled = true
 text = "Created by Jayden, Stegimus & Ross 
-Special Thanks: Helix Güd, Kenney, PirateDev, Btan2"
+Special Thanks: Helix Güd, Kenney, PirateSoftware, Btan2"
 fit_content = true
 
 [node name="AudioMainMenu" type="AudioStreamPlayer" parent="."]
