@@ -1,6 +1,6 @@
 ![bdpt logo](https://github.com/jaydensipe/Burning-Down-Peasant-Town/blob/main/ui/assets/btpt_logo_final.png)
 
-Burning Down Peasant Town is a game about:
+<i>Burning Down Peasant Town</i> is a game about:
 
 <ul>
   <li><strong>Wreaking Havoc</strong> on a series of villages as a fire-wielding Imp.</li>
