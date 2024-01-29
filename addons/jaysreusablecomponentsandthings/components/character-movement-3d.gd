@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	if (move_stats.apply_acceleration):
 		_direction = lerp(_direction, (character.transform.basis * Vector3(_input_dir.x, 0, _input_dir.y)).normalized(), delta * move_stats.acceleration)		
 	else:
-		_direction = character.transform.basis * Vector3(_input_dir.x, 0, _input_dir.y).normalized()
+		_direction = (character.transform.basis * Vector3(_input_dir.x, 0, _input_dir.y)).normalized()
 		
 	if character.is_on_floor():
 		if _direction:

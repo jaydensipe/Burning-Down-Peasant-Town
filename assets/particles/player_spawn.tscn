@@ -463,5 +463,3 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 modulate = Color(0.596078, 0.32549, 0.32549, 1)
 sprite_frames = SubResource("SpriteFrames_0w3ao")
 autoplay = "default"
-frame = 63
-frame_progress = 1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwxplhemgu8ik"]
+[gd_scene load_steps=11 format=3 uid="uid://bwxplhemgu8ik"]
 
 [ext_resource type="PackedScene" uid="uid://c2t5opg8aa3f8" path="res://scenes/maps/map01.tscn" id="1_73m3j"]
 [ext_resource type="Script" path="res://scenes/main_game.gd" id="1_uo4jy"]
@@ -6,17 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://cg4ypbhby0i7v" path="res://ui/how_to_play.tscn" id="3_3pnrx"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/level.gd" id="3_ujovp"]
 [ext_resource type="Script" path="res://addons/jaysreusablecomponentsandthings/components/level-manager-component.gd" id="5_mnhlh"]
-[ext_resource type="PackedScene" uid="uid://dfgl5sqtidbfl" path="res://scenes/maps/map02.tscn" id="5_wt6j2"]
+[ext_resource type="PackedScene" uid="uid://dquoc6gd6dfm7" path="res://scenes/maps/map02.tscn" id="5_wt6j2"]
+[ext_resource type="AudioStream" uid="uid://bu2wh7dgeyctk" path="res://sounds/game_music.wav" id="8_p3ho0"]
 
-[sub_resource type="Resource" id="Resource_ocdix"]
+[sub_resource type="Resource" id="Resource_macek"]
 script = ExtResource("3_ujovp")
 level_name = "map01"
-level = ExtResource("1_73m3j")
+level = ExtResource("5_wt6j2")
 
-[sub_resource type="Resource" id="Resource_1qcfn"]
+[sub_resource type="Resource" id="Resource_xxjox"]
 script = ExtResource("3_ujovp")
 level_name = "map02"
-level = ExtResource("5_wt6j2")
+level = ExtResource("1_73m3j")
 
 [node name="MainGame" type="Node"]
 script = ExtResource("1_uo4jy")
@@ -30,6 +31,10 @@ offset_right = 1920.0
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("5_mnhlh")
-levels = Array[ExtResource("3_ujovp")]([SubResource("Resource_ocdix"), SubResource("Resource_1qcfn")])
+levels = Array[ExtResource("3_ujovp")]([SubResource("Resource_macek"), SubResource("Resource_xxjox")])
+
+[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_p3ho0")
+bus = &"Music"
 
 [connection signal="level_loaded" from="LevelManager" to="." method="_on_level_manager_level_loaded"]

@@ -8,13 +8,15 @@ var burning: bool = false:
 		burning = value
 		
 		if (value):
+			burn_timer.paused = false
+			
 			burn_timer.start()
 			started_burn.emit()
 			
 			if (use_3d_burn_effects):
 				_default_burn_vfx_3d()
 		else:
-			burn_timer.stop()
+			burn_timer.paused = true
 			
 			if (use_3d_burn_effects):
 				_default_burn_vfx_3d(true)

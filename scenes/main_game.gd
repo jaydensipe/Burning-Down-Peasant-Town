@@ -4,6 +4,8 @@ class_name Main
 @onready var level_manager: LevelManager = $LevelManager
 @onready var main_menu: MainMenu = $MainMenu
 @onready var how_to_play: Control = $MainMenu/HowToPlay
+@onready var music_audio_stream_player: AudioStreamPlayer = $MusicAudioStreamPlayer
+
 const RETRY_SCREEN = preload("res://ui/retry_screen.tscn")
 const VICTORY_SCREEN = preload("res://ui/victory_screen.tscn")
 
@@ -59,6 +61,8 @@ func _init_ui() -> void:
 	main_menu.play_button.pressed.connect(func(): 
 		remove_child(main_menu)
 		level_manager.load_level_by_index(0)
+		
+		music_audio_stream_player.play()
 	)
 	
 	main_menu.quit_button.pressed.connect(func():

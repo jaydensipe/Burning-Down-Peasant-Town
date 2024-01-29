@@ -24,7 +24,7 @@ func _ready() -> void:
 	)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey:
+	if event is InputEventKey or event is InputEventMouseButton:
 		if event.pressed:
 			press_any_key_pressed.emit()
 			
